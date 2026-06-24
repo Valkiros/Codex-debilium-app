@@ -25,7 +25,7 @@
   "plugins": {
     "updater": {
       "endpoints": [
-        "https://github.com/Valkiros/Codex_debilium/releases/latest/download/latest.json"
+        "https://github.com/Valkiros/Codex-debilium-app/releases/latest/download/latest.json"
       ],
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDA3RkNFMjBEQUU5RTAzNDkKUldSSkE1NnVEZUw4QitaTU8xbWl1c1krTVR3dURvVjUzY25HMDFSWHBmSG0xM3BoclppN1VBQjkK"
     }
