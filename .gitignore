@@ -1,0 +1,50 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Dependencies & Build
+node_modules
+dist
+dist-ssr
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment Variables (Supabase keys, etc.)
+.env
+.env.*
+
+# Rust build output
+src-tauri/target
+
+# Local database
+*.db
+*.db-shm
+*.db-wal
+
+# Security - Keys & Secrets
+tauri.key
+*.pub
+
+# Temporary files
+src-tauri/*.log
+src-tauri/*.txt
+
+# Claude Code (session-specific, not project config)
+.claude/plans/
+.claude/settings.local.json
+
+# Old project artifacts
+.antigravity/
+src-tauri/data/items/Old/

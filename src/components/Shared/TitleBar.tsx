@@ -1,0 +1,240 @@
+import { useState, useEffect } from "react";
+import { getCurrentWindow } from "@tauri-apps/api/window";
+import { VscChromeMinimize, VscChromeMaximize, VscChromeClose, VscChromeRestore } from "react-icons/vsc";
+
+interface TitleBarProps {
+    onCheckUpdate: () => void;
+    onOpenInfo: () => void;
+    onOpenIndex: () => void;
+    showActionsMenu?: boolean;
+    onSave?: () => void;
+    onUndo?: () => void;
+    onRedo?: () => void;
+
+    // Affichage props
+    zoomLevel: number;
+    onZoomIn: () => void;
+    onZoomOut: () => void;
+    onZoomReset: () => void;
+    visibleTabs: Record<string, boolean>;
+    onToggleTab: (tabId: string) => void;
+    tabsList: { id: string, label: string }[];
+}
+
+export function TitleBar({ onCheckUpdate, onOpenInfo, onOpenIndex, showActionsMenu, onSave, onUndo, onRedo, zoomLevel, onZoomIn, onZoomOut, onZoomReset, visibleTabs, onToggleTab, tabsList }: TitleBarProps) {
+    const [isHelpOpen, setIsHelpOpen] = useState(false);
+    const [isActionsOpen, setIsActionsOpen] = useState(false);
+    const [isAffichageOpen, setIsAffichageOpen] = useState(false);
+    const [isTabsMenuOpen, setIsTabsMenuOpen] = useState(false);
+    const [isMaximized, setIsMaximized] = useState(false);
+
+    // Initialize window state
+    useEffect(() => {
+        const updateState = async () => {
+            const win = getCurrentWindow();
+            setIsMaximized(await win.isMaximized());
+        };
+        updateState();
+
+        // Ideally we'd listen for resize events, but for now we'll update on click
+        const handleResize = async () => {
+            const win = getCurrentWindow();
+            setIsMaximized(await win.isMaximized());
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const handleMinimize = async () => await getCurrentWindow().minimize();
+
+    const handleMaximize = async () => {
+        const win = getCurrentWindow();
+        const max = await win.isMaximized();
+        if (max) {
+            await win.unmaximize();
+            setIsMaximized(false);
+        } else {
+            await win.maximize();
+            setIsMaximized(true);
+        }
+    };
+
+    const handleClose = async () => await getCurrentWindow().close();
+
+    return (
+        <div className="h-8 bg-black flex items-center justify-between select-none absolute top-0 left-0 right-0 z-[100] text-[#cccccc] font-sans text-sm border-b border-[#333]">
+            {/* Left Section: Icon + Help */}
+            <div className="flex items-center h-full z-20">
+                {/* App Icon */}
+                <div className="pl-3 pr-2 h-full flex items-center justify-center pointer-events-none">
+                    <img src="/favicon.ico" alt="Icon" className="w-4 h-4" />
+                </div>
+
+                {/* Actions Menu */}
+                {showActionsMenu && (
+                    <div className="relative h-full flex items-center">
+                        <button
+                            onClick={() => { setIsActionsOpen(!isActionsOpen); setIsHelpOpen(false); setIsAffichageOpen(false); setIsTabsMenuOpen(false); }}
+                            className={`px-3 h-full hover:bg-[#333] flex items-center focus:outline-none transition-colors ${isActionsOpen ? 'bg-[#333]' : ''}`}
+                        >
+                            Actions
+                        </button>
+
+                        {isActionsOpen && (
+                            <>
+                                <div className="fixed inset-0 z-40" onClick={() => setIsActionsOpen(false)}></div>
+                                <div className="absolute top-full left-0 w-56 bg-[#1f1f1f] border border-[#333] text-[#cccccc] shadow-2xl z-50 flex flex-col py-1">
+                                    <button
+                                        onClick={() => { onSave?.(); setIsActionsOpen(false); }}
+                                        className="px-4 py-2 hover:bg-[#333] text-left flex items-center justify-between w-full"
+                                    >
+                                        Sauvegarder <span className="text-xs text-[#888]">Ctrl+S</span>
+                                    </button>
+                                    <button
+                                        onClick={() => { onUndo?.(); setIsActionsOpen(false); }}
+                                        className="px-4 py-2 hover:bg-[#333] text-left flex items-center justify-between w-full border-t border-[#333]"
+                                    >
+                                        Annuler <span className="text-xs text-[#888]">Ctrl+Z</span>
+                                    </button>
+                                    <button
+                                        onClick={() => { onRedo?.(); setIsActionsOpen(false); }}
+                                        className="px-4 py-2 hover:bg-[#333] text-left flex items-center justify-between w-full"
+                                    >
+                                        Refaire <span className="text-xs text-[#888]">Ctrl+Y</span>
+                                    </button>
+                                </div>
+                            </>
+                        )}
+                    </div>
+                )}
+
+                {/* Affichage Menu */}
+                <div className="relative h-full flex items-center">
+                    <button
+                        onClick={() => { setIsAffichageOpen(!isAffichageOpen); setIsTabsMenuOpen(false); setIsActionsOpen(false); setIsHelpOpen(false); }}
+                        className={`px-3 h-full hover:bg-[#333] flex items-center focus:outline-none transition-colors ${isAffichageOpen ? 'bg-[#333]' : ''}`}
+                    >
+                        Affichage
+                    </button>
+
+                    {isAffichageOpen && (
+                        <>
+                            <div className="fixed inset-0 z-40" onClick={() => setIsAffichageOpen(false)}></div>
+                            <div className="absolute top-full left-0 w-64 bg-[#1f1f1f] border border-[#333] text-[#cccccc] shadow-2xl z-50 flex flex-col py-1">
+                                <button onClick={() => { onZoomReset(); setIsAffichageOpen(false); }} className="px-4 py-2 hover:bg-[#333] text-left flex items-center justify-between w-full">
+                                    <span>Zoom 100%</span>
+                                    <span className="text-xs text-[#888]">{Math.round(zoomLevel * 100)}%</span>
+                                </button>
+                                <button onClick={() => { onZoomIn(); setIsAffichageOpen(false); }} className="px-4 py-2 hover:bg-[#333] text-left w-full">Zoom +</button>
+                                <button onClick={() => { onZoomOut(); setIsAffichageOpen(false); setIsTabsMenuOpen(false); }} className="px-4 py-2 hover:bg-[#333] text-left w-full border-b border-[#333]">Zoom -</button>
+                                
+                                <button 
+                                    onClick={(e) => { e.stopPropagation(); setIsTabsMenuOpen(!isTabsMenuOpen); }} 
+                                    className="px-4 py-2 hover:bg-[#333] text-left flex items-center justify-between w-full"
+                                >
+                                    <span>Onglets</span>
+                                    <span className="text-xs text-[#888]">{isTabsMenuOpen ? "▼" : "▶"}</span>
+                                </button>
+
+                                {isTabsMenuOpen && (
+                                    <div className="bg-[#141414] py-1 border-t border-[#333]">
+                                        {tabsList.map(tab => {
+                                            const isVisible = visibleTabs[tab.id] !== false;
+                                            const isMandatory = tab.id === 'fiche';
+
+                                            return (
+                                                <button
+                                                    key={tab.id}
+                                                    onClick={(e) => {
+                                                        e.stopPropagation(); // Don't close menu immediately to allow multiple toggles, or close? The user might want to toggle multiple.
+                                                        if (!isMandatory) onToggleTab(tab.id);
+                                                    }}
+                                                    className={`px-4 py-2 hover:bg-[#333] text-left flex items-center gap-3 w-full ${isMandatory ? 'opacity-50 cursor-not-allowed' : ''}`}
+                                                    title={isMandatory ? "Cet onglet ne peut pas être masqué" : ""}
+                                                >
+                                                    <div className="w-4 h-4 flex items-center justify-center">
+                                                        {isVisible && (
+                                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                            </svg>
+                                                        )}
+                                                    </div>
+                                                    {tab.label}
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
+                                )}
+                            </div>
+                        </>
+                    )}
+                </div>
+
+                {/* Help Menu */}
+                <div className="relative h-full flex items-center">
+                    <button
+                        onClick={() => { setIsHelpOpen(!isHelpOpen); setIsActionsOpen(false); setIsAffichageOpen(false); setIsTabsMenuOpen(false); }}
+                        className={`px-3 h-full hover:bg-[#333] flex items-center focus:outline-none transition-colors ${isHelpOpen ? 'bg-[#333]' : ''}`}
+                    >
+                        Aide
+                    </button>
+
+                    {isHelpOpen && (
+                        <>
+                            <div className="fixed inset-0 z-40" onClick={() => setIsHelpOpen(false)}></div>
+                            <div className="absolute top-full left-0 w-56 bg-[#1f1f1f] border border-[#333] text-[#cccccc] shadow-2xl z-50 flex flex-col py-1">
+                                <button
+                                    onClick={() => { onOpenIndex(); setIsHelpOpen(false); }}
+                                    className="px-4 py-2 hover:bg-[#333] text-left flex items-center gap-3 w-full"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                                    </svg>
+                                    Index & Règles
+                                </button>
+                                <div className="border-t border-[#333] my-1"></div>
+                                <button
+                                    onClick={() => { onCheckUpdate(); setIsHelpOpen(false); }}
+                                    className="px-4 py-2 hover:bg-[#333] text-left flex items-center gap-3 w-full"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                    </svg>
+                                    Vérifier mise à jour
+                                </button>
+                                <button
+                                    onClick={() => { onOpenInfo(); setIsHelpOpen(false); }}
+                                    className="px-4 py-2 hover:bg-[#333] text-left flex items-center gap-3 w-full"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                    </svg>
+                                    Informations
+                                </button>
+                            </div>
+                        </>
+                    )}
+                </div>
+            </div>
+
+            {/* Center Section: Drag Region */}
+            <div data-tauri-drag-region className="flex-1 h-full flex items-center justify-center text-xs text-[#999] cursor-default">
+                Codex debilium
+            </div>
+
+            {/* Right Section: Window Controls */}
+            <div className="flex items-center h-full z-20">
+                <button onClick={handleMinimize} className="h-full w-12 flex items-center justify-center hover:bg-[#333] transition-colors" title="Réduire">
+                    <VscChromeMinimize />
+                </button>
+                <button onClick={handleMaximize} className="h-full w-12 flex items-center justify-center hover:bg-[#333] transition-colors" title={isMaximized ? "Niveau inférieur" : "Agrandir"}>
+                    {isMaximized ? <VscChromeRestore /> : <VscChromeMaximize />}
+                </button>
+                <button onClick={handleClose} className="h-full w-12 flex items-center justify-center hover:bg-[#e81123] hover:text-white transition-colors" title="Fermer">
+                    <VscChromeClose />
+                </button>
+            </div>
+
+        </div>
+    );
+}

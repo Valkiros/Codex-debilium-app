@@ -1,0 +1,506 @@
+// C'est la structure qui vient de Supabase
+export interface RefEquipementRaw {
+    id: number;
+    category: string;
+    ref_id: number;
+    nom: string;
+    degats?: any;   // "any" parce qu'il y a plusieurs formats de variables dans la base de données (voir export interface RefEquipement)
+    caracteristiques?: any;
+    protections?: any;
+    prix_info?: any;
+    craft?: any;
+    details?: any;
+}
+
+// C'est la structure qui est utilisée dans l'application
+export interface RefEquipement {
+    id: number,
+    ref_id: number,
+    category: string,
+    nom: string,
+
+    // Dégâts
+    degats?: string,    // Le ? veut dire que ce n'est pas une option obligatoire de l'objet
+    pi?: number,
+
+    // Caractéristiques
+    courage?: number,
+    intelligence?: number,
+    charisme?: number,
+    adresse?: number,
+    force?: number,
+    perception?: number,
+    esquive?: number,
+    attaque?: number,
+    parade?: number,
+    mag_psy?: number,
+    mag_phy?: number,
+    rm?: number,
+    mvt?: number,
+    discretion?: number,
+
+    // Protections
+    pr_sol?: number,
+    pr_mag?: number,
+    pr_spe?: number,
+    pluie?: number,
+    froid?: number,
+    chaleur?: number,
+
+    // Prix et monnaie
+    prix: number,
+    monnaie: string,
+
+    // Details
+    niveau?: number,
+    restriction?: string,
+    origine_rarete?: string,
+    type?: string,
+    contenant?: string,
+    portee?: string,
+    aura?: string,
+    mains?: string,
+    matiere?: string,
+    couvre?: string,
+    effet: string,
+    charge?: number,
+    capacite?: number,
+    places?: number,
+    poids: number,
+    rupture?: string,
+    recolte?: string,
+    peremption?: string,
+
+    // Craft
+    composants: string,
+    outils: string,
+    qualifications: string,
+    difficulte: number,
+    temps_de_confection: string,
+    confection: string,
+    xp_confection: number,
+    xp_reparation: number,
+
+    raw: RefEquipementRaw;
+}
+
+export interface Equipement {
+    uid: string; // ID unique pour React key (uuid)
+    id: string; // ID de Supabase
+    refId: number; // ID de référence (Notre référence à nous)
+    modif_pi?: number;
+    modif_rupture?: number;
+    modif_pr_sol?: number;
+    modif_pr_mag?: number;
+    modif_pr_spe?: number;
+    quantite?: number;
+    etat?: string; // 'Intact', 'Endommagé', 'Cassé'
+    equipement_type?: 'Armes' | 'Protections' | 'Accessoires' | 'MainsNues' | 'Sacoches' | 'Potions' | 'Objets_magiques' | 'Munitions' | 'Armes_de_jet' | 'Pieges' | 'Outils';    // Références aux catégories
+}
+
+export interface Sac {
+    uid: string; // ID unique pour React key (uuid)
+    id: string; // ID de Supabase
+    refId: number; // ID de référence (Notre référence à nous)
+    quantite?: number;
+    equipement_type: 'Sacs';    // Références aux catégories
+    notes?: string;
+    etat?: string; // 'Intact', 'Endommagé', 'Cassé'
+    modif_rupture?: number;
+    modif_pr_sol?: number;
+    modif_pr_mag?: number;
+    modif_pr_spe?: number;
+    charges?: number;
+}
+
+// Interface simplifiée pour les APE
+export interface ApeEntry {
+    uid: string; // ID unique pour React
+    id: number;  // ID de l'APE (1-100)
+    niveau: number; // 0, 1, 2, 3
+}
+
+// Interface pour l'identité du personnage (avec image)
+export interface Identity {
+    avatar_url: string;
+    nom: string;
+    sexe: string;
+    origine: string;
+    metier: string;
+    specialisation?: string;
+    sous_specialisation?: string;
+    description?: string;
+    domaine?: string;
+}
+
+// Interface pour les PVs et PMs (schéma de base)
+export interface ValueMax {
+    current: number;
+    max: number;
+    temp: number; // Additionnel/Temporaire
+}
+
+// Interface pour la Corruption
+export interface Corruption {
+    current: number;
+    max: number; // 100
+    daily: number;
+}
+
+// Interface pour les PVs et PMs (détails)
+export interface Vitals {
+    pv: ValueMax;
+    pm: ValueMax;
+    corruption: Corruption;
+}
+
+// Interface pour le niveau, l'expérience, les points de destin et les blessures à la tête
+export interface GeneralStats {
+    niveau: number;
+    experience: number;
+    points_destin: number;
+    malus_tete: number;
+    malus_2eme_at?: number;
+    bonus_ad_12?: 'AT' | 'PRD' | null;
+}
+
+// Interface pour les protections (schéma de base)
+export interface ProtectionValue {
+    base: number;
+    temp: number;
+}
+
+// Interface pour les protections (détails)
+export interface Defenses {
+    naturelle: ProtectionValue;
+    solide: ProtectionValue;
+    speciale: ProtectionValue;
+    magique: ProtectionValue;
+    bouclier_actif: boolean;
+}
+
+// Interface pour les mouvements (détails)
+export interface Movement {
+    marche: ProtectionValue; // re-use ProtectionValue for Base/Temp structure
+    course: ProtectionValue;
+}
+
+// Interface pour la magie et la discrétion (détails)
+export interface MagicStealth {
+    magie_physique: ProtectionValue;
+    magie_psychique: ProtectionValue;
+    resistance_magique: ProtectionValue;
+    discretion: ProtectionValue;
+    // Protection Status (Environment)
+    protection_pluie: ProtectionValue;
+    protection_froid: ProtectionValue;
+    protection_chaleur: ProtectionValue;
+}
+
+// Interface pour les caractéristiques (schéma de base)
+export interface CharacteristicColumn {
+    naturel: number;
+    t1: number;
+    t2: number;
+    t3: number;
+}
+
+// Interface pour les caractéristiques (détails)
+export interface Characteristics {
+    courage: CharacteristicColumn;
+    intelligence: CharacteristicColumn;
+    charisme: CharacteristicColumn;
+    adresse: CharacteristicColumn;
+    force: CharacteristicColumn;
+    perception: CharacteristicColumn;
+    esquive: CharacteristicColumn;
+    attaque: CharacteristicColumn;
+    parade: CharacteristicColumn;
+    degats: CharacteristicColumn;
+}
+
+// Interface pour les modificateurs temporaires
+export interface TempModifiers {
+    mod1: string;
+    mod2: string;
+    mod3: string;
+}
+
+export interface CustomSacItem {
+    uid: string;
+    nom: string;
+    quantite: number;
+    poids: number; // Poids Unitaire
+}
+
+export interface CatalogueItem {
+    uid: string; // Identifiant unique pour la liste (uuid)
+    refId: number; // L'ID de l'objet de référence (Notre référence à nous)
+    quantite: number;
+    rarete: number; // 0.5, 1, 1.5, 2
+    is_included: boolean; // La case à cocher globale de la ligne
+    is_condensed: boolean; // La case à cocher de vue de l'objet
+}
+
+// Interface pour les données du personnage
+export interface CharacterData {
+    identity: Identity;
+    vitals: Vitals;
+    general: GeneralStats;
+    defenses: Defenses;
+    movement: Movement;
+    magic: MagicStealth;
+    characteristics: Characteristics;
+    temp_modifiers: TempModifiers;
+    inventory: any[]; // Placeholder for now, will link to existing inventory structure
+    custom_sac_items: CustomSacItem[]; // Nouveaux objets personnalisés du sac
+    catalogue?: CatalogueItem[]; // Liste d'achats du catalogue
+    catalogue_is_global_condensed?: boolean; // État de la case à cocher vue globale
+    ape: ApeEntry[]; // Nouvelle structures pour les APE
+    competences: CharacterCompetence[];
+    competences_specialisation: CharacterCompetence[];
+    competences_sous_specialisation: CharacterCompetence[];
+    status: CharacterStatus;
+    richesse: RichesseData; // Ajout Richesse
+    mounts: Mount[];
+    familiers: Mount[];
+    invocations: Mount[]; // Nouvelle structure pour les montures
+}
+
+// Interfaces pour la nouvelle page "État & Besoins"
+export interface Senses {
+    vue: string;
+    ouie: string;
+    odorat: string;
+    humectation: string;
+    sentir_danger: number;
+}
+
+export interface Fatigue {
+    etat: string;
+    recuperation: string;
+    nb_heure: number;
+}
+
+export interface Alcohol {
+    leger: number;
+    fort: number;
+    gueule_de_bois: number;
+}
+
+export interface Drug {
+    type: string; // 'Aucune', 'ADD', 'ADD+', 'ADD++'
+    jours_retard: number;
+}
+
+export interface CharacterStatus {
+    senses: Senses;
+    fatigue: Fatigue;
+    alcohol: Alcohol;
+    drug: Drug;
+}
+
+// Interfaces pour la Richesse
+export interface RichesseStatus {
+    honneurs: number;
+    sm_sot: number;
+    mc_mot: number;
+}
+
+export interface CurrencyValues {
+    sur_soi: number;
+    banque: number;
+    maison: number;
+    commun: number;
+}
+
+export interface RichesseMonnaies {
+    beryllium: CurrencyValues;
+    thritil: CurrencyValues;
+    or: CurrencyValues;
+    argent: CurrencyValues;
+    cuivre: CurrencyValues;
+}
+
+export interface RichesseData {
+    capacite_bourse: number;
+    status_points: RichesseStatus;
+    monnaies: RichesseMonnaies;
+}
+
+// Interface pour les montures
+export interface Mount {
+    uid: string; // ID unique pour React key (uuid)
+    nom: string;
+    pv_current: number;
+    pv_max: number;
+    courage: number;
+    intelligence: number;
+    charisme: number;
+    adresse: number;
+    force: number;
+    esquive: number;
+    perception: number;
+    attaque: number;
+    parade: number;
+    rm: number;
+    mvt_marche: number;
+    mvt_course: number;
+    mvt_voyage: number;
+    prix: string;
+    entretien: string;
+    description: string;
+    competences: string;
+    bonus_cavalier: string;
+    lieux: string;
+    charge_max: string;
+    at_speciales: string;
+}
+
+// Interface pour le résumé du personnage
+export interface CharacterSummary {
+    id: string;
+    name: string;
+    updated_at: string;
+}
+
+// Interface pour le résumé de la version
+export interface VersionSummary {
+    version_id: number;
+    saved_at: string;
+}
+
+// Interface pour les composants de statistiques
+export interface StatComponent {
+    label: string;
+    value: number;
+}
+
+// Interface pour les info-bulles des statistiques
+export interface StatDetail {
+    formula: string;
+    components: StatComponent[];
+    total: number;
+}
+
+// Interface pour les exigences (Origine et Métier)
+export interface Requirements {
+    COUR?: number;
+    INT?: number;
+    CHA?: number;
+    AD?: number;
+    FO?: number;
+}
+
+// Interface pour les origines
+export interface Origine {
+    id: number;
+    name_m: string;
+    name_f: string;
+    min: Requirements;
+    max: Requirements;
+    vitesse: number;
+    metiers_impossibles?: string[];
+    competences?: string[];
+}
+
+export interface SousSpecialisation {
+    id: string; // Rust "id"
+    name_m: string;
+    name_f: string;
+    necessite_competence: string[];
+    attributs_automatisables: {
+        [key: string]: number;
+    };
+    attributs_specifiques: {
+        [key: string]: string;
+    };
+    competences_obligatoires?: string[];
+    nombre_competences_choix?: number;
+    competences_choix?: string[];
+}
+
+export interface Specialisation {
+    id: string;
+    name_m: string;
+    name_f: string;
+    necessite_competence: string[];
+    attributs_automatisables: {
+        [key: string]: number;
+    };
+    attributs_specifiques: {
+        [key: string]: string;
+    };
+    competences?: string[];
+    sous_specialisations?: SousSpecialisation[];
+}
+
+// Interface pour les métiers
+export interface Metier {
+    id: string;
+    name_m: string;
+    name_f: string;
+    min: Requirements;
+    max: Requirements;
+    specialisations?: Specialisation[];
+    competences_obligatoires?: string[];
+    nombre_competences_choix?: number;
+    competences_choix?: string[];
+}
+
+// Interface pour les inf-bulles des corruptions d'origine
+export interface CorruptionOrigineRef {
+    Masculin: string;
+    Féminin: string;
+    Effets: string;
+}
+
+// Interface pour les info-bulles des paliers de corruption
+export interface CorruptionPalierRef {
+    Paliers: number;
+    "Aura chaotique (arme)": number;
+    "Aura divine (arme)": number;
+    "Aura chaotique (protection)": number;
+    "Aura divine (protection)": number;
+    "Résistance magique (RM)": number;
+    "Force (FO)": number;
+    "Intelligence (INT)": number;
+    "Charisme (CHA)": number;
+    Effets: string;
+}
+
+// Interface pour les domaines (Preux Chevalier)
+export interface Domaine {
+    domaine: string;
+    description: string;
+}
+
+// Interface pour les réglages et configurations du jeu
+export interface GameRules {
+    origines: Origine[];
+    metiers: Metier[];
+    corruption_origine: CorruptionOrigineRef[];
+    corruption_palier: CorruptionPalierRef[];
+    domaines: Domaine[];
+}
+
+// Interface pour les compétences
+export interface Competence {
+    nom: string;
+    description: string;
+    tableau?: string;
+}
+
+// Interface pour les compétences du personnage
+export interface CharacterCompetence {
+    id: string; // Unique ID (uuid)
+    nom: string;
+    description: string;
+    tableau?: string;
+}
+
+// Interface pour les profils utilisateurs (rôle dans Supabase)
+export interface UserProfile {
+    id: string; // References auth.users.id
+    role: string; // 'admin', 'gm', 'player'
+}
