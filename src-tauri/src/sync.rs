@@ -1,5 +1,6 @@
 use crate::db::{AppState, Personnage};
 use reqwest::blocking::Client;
+use rusqlite::OptionalExtension;
 use tauri::State;
 
 #[tauri::command]
@@ -12,7 +13,7 @@ pub fn sync_personnages(
     let client = Client::new();
     let db = state.db.lock().map_err(|e| e.to_string())?;
 
-    // 1. Fetch Local Data
+    // 1. Fetch local characters
     let mut stmt = db
         .prepare("SELECT id, name, data, updated_at FROM personnages")
         .map_err(|e| e.to_string())?;
@@ -34,30 +35,81 @@ pub fn sync_personnages(
         .collect::<std::result::Result<Vec<_>, _>>()
         .map_err(|e| e.to_string())?;
 
-    // 2. Push to Supabase (Upsert)
-    // Using Supabase REST API: POST /personnages with Prefer: resolution=merge-duplicates
+    // 2. Push local characters to Supabase (Upsert)
     let url = format!("{}/rest/v1/personnages", supabase_url);
 
+    if !local_personnages.is_empty() {
+        let response = client
+            .post(&url)
+            .header("apikey", &supabase_key)
+            .header("Authorization", format!("Bearer {}", token))
+            .header("Content-Type", "application/json")
+            .header("Prefer", "resolution=merge-duplicates")
+            .json(&local_personnages)
+            .send()
+            .map_err(|e| e.to_string())?;
+
+        if !response.status().is_success() {
+            return Err(format!(
+                "Push failed: {}",
+                response.text().unwrap_or_default()
+            ));
+        }
+    }
+
+    let pushed = local_personnages.len();
+
+    // 3. Pull remote characters that are newer or missing locally
+    let url_get = format!("{}/rest/v1/personnages?select=*", supabase_url);
     let response = client
-        .post(&url)
+        .get(&url_get)
         .header("apikey", &supabase_key)
         .header("Authorization", format!("Bearer {}", token))
-        .header("Content-Type", "application/json")
-        .header("Prefer", "resolution=merge-duplicates")
-        .json(&local_personnages)
         .send()
-        .map_err(|e| e.to_string())?;
+        .map_err(|e| format!("Pull request failed: {}", e))?;
 
-    if !response.status().is_success() {
-        return Err(format!(
-            "Sync failed: {}",
-            response.text().unwrap_or_default()
-        ));
+    let mut pulled = 0;
+    if response.status().is_success() {
+        let remote_personnages: Vec<serde_json::Value> =
+            response.json().map_err(|e| e.to_string())?;
+
+        for remote in &remote_personnages {
+            let id = remote.get("id").and_then(|v| v.as_str()).unwrap_or_default();
+            let remote_name = remote.get("name").and_then(|v| v.as_str()).unwrap_or("Sans nom");
+            let remote_updated = remote.get("updated_at").and_then(|v| v.as_str()).unwrap_or("");
+            let remote_data = remote.get("data").cloned().unwrap_or(serde_json::Value::Null);
+
+            if id.is_empty() { continue; }
+
+            let local_updated: Option<String> = db
+                .query_row("SELECT updated_at FROM personnages WHERE id = ?1", [id], |row| row.get(0))
+                .optional()
+                .map_err(|e| e.to_string())?;
+
+            match local_updated {
+                Some(local_ts) => {
+                    if remote_updated > local_ts.as_str() {
+                        db.execute(
+                            "UPDATE personnages SET name = ?1, data = ?2, updated_at = ?3 WHERE id = ?4",
+                            rusqlite::params![remote_name, remote_data.to_string(), remote_updated, id],
+                        ).map_err(|e| e.to_string())?;
+                        pulled += 1;
+                    }
+                }
+                None => {
+                    db.execute(
+                        "INSERT INTO personnages (id, name, data, updated_at) VALUES (?1, ?2, ?3, ?4)",
+                        rusqlite::params![id, remote_name, remote_data.to_string(), remote_updated],
+                    ).map_err(|e| e.to_string())?;
+                    pulled += 1;
+                }
+            }
+        }
     }
 
     Ok(format!(
-        "Synced {} characters to cloud.",
-        local_personnages.len()
+        "Sync terminée : {} envoyé(s), {} récupéré(s).",
+        pushed, pulled
     ))
 }
 
@@ -312,6 +364,101 @@ pub fn sync_ref_items(
     tx.commit().map_err(|e| e.to_string())?;
 
     Ok(format!("Successfully synced {} equipements.", count))
+}
+
+#[tauri::command]
+pub fn pull_personnages(
+    token: String,
+    supabase_url: String,
+    supabase_key: String,
+    state: State<AppState>,
+) -> Result<String, String> {
+    let client = Client::new();
+    let db = state.db.lock().map_err(|e| e.to_string())?;
+
+    // 1. Fetch remote characters
+    let url = format!("{}/rest/v1/personnages?select=*", supabase_url);
+    let response = client
+        .get(&url)
+        .header("apikey", &supabase_key)
+        .header("Authorization", format!("Bearer {}", token))
+        .send()
+        .map_err(|e| format!("Pull request failed: {}", e))?;
+
+    if !response.status().is_success() {
+        return Err(format!(
+            "Pull failed: {}",
+            response.text().unwrap_or_default()
+        ));
+    }
+
+    let remote_personnages: Vec<serde_json::Value> =
+        response.json().map_err(|e| e.to_string())?;
+
+    // 2. For each remote character, compare with local and keep the most recent
+    let mut pulled = 0;
+    let mut skipped = 0;
+
+    for remote in &remote_personnages {
+        let id = remote.get("id").and_then(|v| v.as_str()).unwrap_or_default();
+        let remote_name = remote.get("name").and_then(|v| v.as_str()).unwrap_or("Sans nom");
+        let remote_updated = remote.get("updated_at").and_then(|v| v.as_str()).unwrap_or("");
+        let remote_data = remote.get("data").cloned().unwrap_or(serde_json::Value::Null);
+
+        if id.is_empty() {
+            continue;
+        }
+
+        // Check if character exists locally
+        let local_updated: Option<String> = db
+            .query_row(
+                "SELECT updated_at FROM personnages WHERE id = ?1",
+                [id],
+                |row| row.get(0),
+            )
+            .optional()
+            .map_err(|e| e.to_string())?;
+
+        match local_updated {
+            Some(local_ts) => {
+                // Character exists locally — keep the most recent
+                if remote_updated > local_ts.as_str() {
+                    db.execute(
+                        "UPDATE personnages SET name = ?1, data = ?2, updated_at = ?3 WHERE id = ?4",
+                        rusqlite::params![
+                            remote_name,
+                            remote_data.to_string(),
+                            remote_updated,
+                            id,
+                        ],
+                    )
+                    .map_err(|e| e.to_string())?;
+                    pulled += 1;
+                } else {
+                    skipped += 1;
+                }
+            }
+            None => {
+                // Character doesn't exist locally — insert it
+                db.execute(
+                    "INSERT INTO personnages (id, name, data, updated_at) VALUES (?1, ?2, ?3, ?4)",
+                    rusqlite::params![
+                        id,
+                        remote_name,
+                        remote_data.to_string(),
+                        remote_updated,
+                    ],
+                )
+                .map_err(|e| e.to_string())?;
+                pulled += 1;
+            }
+        }
+    }
+
+    Ok(format!(
+        "Pull terminé : {} personnage(s) récupéré(s), {} inchangé(s).",
+        pulled, skipped
+    ))
 }
 
 #[tauri::command]

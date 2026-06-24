@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, lazy, Suspense } from "react";
 import "./index.css";
+import { invoke } from "@tauri-apps/api/core";
 import { supabase } from "./lib/supabase";
 import Login from "./components/Accueil/Login";
 import { Session, AuthChangeEvent } from "@supabase/supabase-js";
@@ -88,10 +89,20 @@ function AppContent() {
 
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event: AuthChangeEvent, session: Session | null) => {
+    } = supabase.auth.onAuthStateChange(async (_event: AuthChangeEvent, session: Session | null) => {
       setSession(session);
       if (session) {
         fetchProfile(session.user.id);
+        try {
+          const result = await invoke<string>('pull_personnages', {
+            token: session.access_token,
+            supabaseUrl: import.meta.env.VITE_SUPABASE_URL,
+            supabaseKey: import.meta.env.VITE_SUPABASE_ANON_KEY,
+          });
+          console.log("Pull:", result);
+        } catch (e) {
+          console.error("Pull failed:", e);
+        }
       } else {
         setUserProfile(null);
       }

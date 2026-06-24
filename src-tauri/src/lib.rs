@@ -31,6 +31,7 @@ pub fn run() {
         .plugin(tauri_plugin_updater::Builder::new().build())
         .invoke_handler(tauri::generate_handler![
             sync::sync_personnages,
+            sync::pull_personnages,
             sync::sync_ref_items,
             sync::publish_ref_items,
             sync::check_remote_db_version,
