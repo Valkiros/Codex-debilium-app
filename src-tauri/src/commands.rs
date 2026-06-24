@@ -307,6 +307,8 @@ pub struct Origine {
     pub vitesse: i32,
     #[serde(alias = "Metiers_impossibles", default)]
     pub metiers_impossibles: Option<Vec<String>>,
+    #[serde(flatten)]
+    pub extra: serde_json::Value,
 }
 
 #[derive(Debug, Serialize, Deserialize)]

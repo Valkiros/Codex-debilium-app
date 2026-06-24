@@ -1,0 +1,332 @@
+[
+  {
+    "numero": 1,
+    "nom": "Ambidextrie",
+    "description": "Le héros peut utiliser de 2 armes en simultanée. Il a 2 attaques et 1 parade par T. La 2ème attaque a AT-5."
+  },
+  {
+    "numero": 2,
+    "nom": "Agoraphobie",
+    "description": "En milieu peuplé, le héros fuit sauf épreuve INT+4. Rattrapage sur CHA des alliés."
+  },
+  {
+    "numero": 3,
+    "nom": "Appel des renforts",
+    "description": "En combat, le héros évite les attaques d'opportunité."
+  },
+  {
+    "numero": 4,
+    "nom": "Appel du Braav'",
+    "description": "Le héros se porte toujours volontaire et ne fuit pas un combat sauf épreuve INT+4. Rattrapage sur CHA des alliés."
+  },
+  {
+    "numero": 5,
+    "nom": "Appel du sauvage",
+    "description": "En présence de horde, le héros devient un ennemi sauf épreuve INT+4. Rattrapage sur CHA des alliés."
+  },
+  {
+    "numero": 6,
+    "nom": "Appel du tonneau",
+    "description": "En présence d'alcool, le héros doit consommer jusqu'à 10 doses d'alcool sauf épreuve INT+4. Rattrapage sur CHA des alliés."
+  },
+  {
+    "numero": 7,
+    "nom": "Appel du ventre",
+    "description": "En manque de nourriture, le héros veut manger ses amis sauf épreuve INT+4. Rattrapage sur CHA des alliés."
+  },
+  {
+    "numero": 8,
+    "nom": "Armes de bourrin",
+    "description": "Le héros peut utiliser les armes à 2 mains sans un malus supplémentaire d'AT-2 et PRD-2."
+  },
+  {
+    "numero": 9,
+    "nom": "Armes longues",
+    "description": "Le héros a AT+2 et PRD+3 avec les armes à 2 mains mais a AT-2 et PRD-2 avec les armes à une main."
+  },
+  {
+    "numero": 10,
+    "nom": "Arnaque et carambouille",
+    "description": "Le héros a une remise de 25% à l'achat et 10% à la revente."
+  },
+  {
+    "numero": 11,
+    "nom": "Attire les monstres",
+    "description": "En cas de rencontre avec des ennemis, le héros est attaqué en premier."
+  },
+  {
+    "numero": 12,
+    "nom": "Beauté féroce",
+    "description": "Les ennemis humanoïdes mâles ont -1 à toutes les caractéristiques contre le héros sauf épreuve INT."
+  },
+  {
+    "numero": 13,
+    "nom": "Bond d'attaque",
+    "description": "1 fois par combat, s'il peut faire une action d'attaque, le héros saute de 8 mètres vers un ennemi en plus de son déplacement et lance une attaque. Le héros a l'initiative durant cet assaut."
+  },
+  {
+    "numero": 14,
+    "nom": "Bourre pif",
+    "description": "Le héros a accès à l'arme \"Main nue (Bourre-pif)\" au lieu de \"Main nue\", aux armes à main nue sans malus supplémentaire d'AT-4, aux coups spéciaux à main nue et aux critiques à main nue."
+  },
+  {
+    "numero": 15,
+    "nom": "Bricolo du dimanche",
+    "description": "Le héros peut fabriquer ou réparer des armes rudimentaires, du matériel varié ou/et faire de la consolidation sur moyenne (INT et AD). Voir document « Bricolage et entretien du matériel»."
+  },
+  {
+    "numero": 16,
+    "nom": "Chance du rempailleur",
+    "description": "Le héros ne peut pas mourir dans un combat."
+  },
+  {
+    "numero": 17,
+    "nom": "Chef de groupe",
+    "description": "Le héros possède plus de poids dans le choix de l'équipe. Il peut échanger sa place avec un allié dans le tour d'initiative d'un combat."
+  },
+  {
+    "numero": 18,
+    "nom": "Chercher des noises",
+    "description": "Le héros a l'initiative sur tous les combats au corps-à-corps sauf embuscades."
+  },
+  {
+    "numero": 19,
+    "nom": "Chevaucher",
+    "description": "Le héros peut utiliser une monture classique sans épreuve et tenter de monter des créatures non conventionnelles sur AD ou CHA."
+  },
+  {
+    "numero": 20,
+    "nom": "Chouraver",
+    "description": "Le héros a AD+4 pour les épreuves de vol à la tire/larcin."
+  },
+  {
+    "numero": 21,
+    "nom": "Comprendre les animaux",
+    "description": "Le héros peut essayer de communiquer avec les animaux sur épreuve INT."
+  },
+  {
+    "numero": 22,
+    "nom": "Cuistot",
+    "description": "Le héros donne Pv+1 et évite les maladies liées à la nourriture pour les repas qu'il prépare. De plus, il peut cuisiner les plats CUISTOT."
+  },
+  {
+    "numero": 23,
+    "nom": "Déplacement silencieux",
+    "description": "Le héros a AD+4 pour les épreuves de discrétion."
+  },
+  {
+    "numero": 24,
+    "nom": "Désamorcer",
+    "description": "Le héros a AD+4 pour les épreuves de désamorçage."
+  },
+  {
+    "numero": 25,
+    "nom": "Détecter / Détection",
+    "description": "Le héros a PER+2 pour détecter des objets, mécanismes, individus ou autres choses dissimulées ou pour repérer un danger."
+  },
+  {
+    "numero": 26,
+    "nom": "Duelliste",
+    "description": "Le héros a INT+4 pour résister à une provocation. Il n'attaque pas dans le dos ni par surprise. Rattrapage sur CHA des alliés."
+  },
+  {
+    "numero": 27,
+    "nom": "Erudition",
+    "description": "Le héros sait lire, écrire et compter sans épreuve."
+  },
+  {
+    "numero": 28,
+    "nom": "Escalader",
+    "description": "Le héros a AD+3 pour les épreuves d'escalade et d'acrobatie."
+  },
+  {
+    "numero": 29,
+    "nom": "Forgeron",
+    "description": "Le héros peut reconnaître les armes et les armures, il peut les rafistoler et les aiguiser sur épreuve AD. Voir document FORGERON."
+  },
+  {
+    "numero": 30,
+    "nom": "Frapper lâchement",
+    "description": "1 fois par combat, le héros, s'il n'est pas détecté, peut infliger Pix2 avec ses attaques à la dague ou affiliée sur le dos d'un humanoïde."
+  },
+  {
+    "numero": 31,
+    "nom": "Fariboles",
+    "description": "Le héros a CHA+3 ou INT+3 pour mentir, persuader, agiter, énerver, déstabiliser ou captiver un individu ou une foule."
+  },
+  {
+    "numero": 32,
+    "nom": "Fouiller dans les poubelles",
+    "description": "En cas de fouille d'un lieu ou d'un cadavre, le héros est le premier à trouver le meilleur butin."
+  },
+  {
+    "numero": 33,
+    "nom": "Ignorant",
+    "description": "Le héros ne peut pas apprendre à lire, ni à compter. Il ne connait rien au commerce, à la politique ou aux combines et risque de se faire arnaquer."
+  },
+  {
+    "numero": 34,
+    "nom": "Infâme",
+    "description": "Le héros a un malus de CHA-3 pour les épreuves de séduction et marchandage mais il a un bonus de CHA+2 pour les épreuves de déstabilisation ou d'intimidation."
+  },
+  {
+    "numero": 35,
+    "nom": "Instinct de survie",
+    "description": "Le héros peut être guidé par le MJ vers la source de nourriture ou boisson la plus proche."
+  },
+  {
+    "numero": 36,
+    "nom": "Instinct du trésor",
+    "description": "Le héros a PER+3 pour les épreuves de fouille ou de détection de trésor/cachette ayant de la valeur."
+  },
+  {
+    "numero": 37,
+    "nom": "Intimider",
+    "description": "Le héros a CHA+2 pour les épreuves d'intimidation et peut faire fuir une cible sur confrontation de CHA vs COU cible."
+  },
+  {
+    "numero": 38,
+    "nom": "Jonglage et danse",
+    "description": "Le héros ignore les malus d'AD pour les épreuves de prestations artistiques."
+  },
+  {
+    "numero": 39,
+    "nom": "Langues des monstres",
+    "description": "Le héros peut comprendre les langues de monstres sans épreuve : Orc, Gobeline, Ogroïque, Animalique, Draconique, R’lyehian et Corvine."
+  },
+  {
+    "numero": 40,
+    "nom": "Méfiance",
+    "description": "Le héros peut tenter de savoir si un PNJ ment sur épreuve INT ou PER."
+  },
+  {
+    "numero": 41,
+    "nom": "Mendier et pleurnicher",
+    "description": "Le héros peut gagner 1D20 PO entre deux aventures. Le héros a, ou donne à un allié, un bonus de CHA+2 dans une négociation pour obtenir une faveur"
+  },
+  {
+    "numero": 42,
+    "nom": "Misérable",
+    "description": "Le héros a AD+2 et CHA+2 pour les épreuves de discrétion, vol et marchandage. Mais il a CHA-4 pour les épreuves sociales. En combat, le héros n'est pas ciblé en priorité par les ennemis."
+  },
+  {
+    "numero": 43,
+    "nom": "Nager",
+    "description": "Le héros peut nager sans épreuve dans des eaux calmes et a AD+5 pour les épreuves aquatiques."
+  },
+  {
+    "numero": 44,
+    "nom": "Naïveté touchante",
+    "description": "Le héros a CHA+5 pour éviter un conflit suite à un problème ou une bévue l'impliquant."
+  },
+  {
+    "numero": 45,
+    "nom": "Parler aux animaux",
+    "description": "Le héros peut dialoguer avec les animaux sur épreuve INT."
+  },
+  {
+    "numero": 46,
+    "nom": "Pénible",
+    "description": "Le héros fait périodiquement des commentaires insultants et se fait frapper par ses alliés, sauf épreuve INT pour fermer sa gueule."
+  },
+  {
+    "numero": 47,
+    "nom": "Pister",
+    "description": "Le héros a PER+3 pour les épreuves de pistage."
+  },
+  {
+    "numero": 48,
+    "nom": "Pleutre",
+    "description": "Lors que le héros réussit une parade ou une esquive, l'ennemi tire 1D6: sur 1 il perd un assaut, 2 il change de cible, 3 il subit un échec critique d'attaque ou parade."
+  },
+  {
+    "numero": 49,
+    "nom": "Poigne de fer",
+    "description": "Le héros peut saisir un humanoïde sur moyenne (FO et AD) au lieu d'attaquer. Il obtient AT+2 et Pi+3 mais ne peut ni parer, ni esquiver. La cible peut se libérer sur moyenne (FO et AD)."
+  },
+  {
+    "numero": 50,
+    "nom": "Premiers soins",
+    "description": "Le héros peut soigner un allié sur moyenne (INT et AD) et lui rendre 1D6 Pv avec du matériel. En cas d'échec critique : il inflige la perte de 1D6 Pv à la cible. En cas de réussite critique : il rend 1D6 Pv supplémentaire."
+  },
+  {
+    "numero": 51,
+    "nom": "Radin",
+    "description": "Le héros ne partage par le butin et refuse de dépenser de l'argent pour les autres sauf épreuve INT+4. Il a CHA+4 pour marchander."
+  },
+  {
+    "numero": 52,
+    "nom": "Récupération",
+    "description": "Le héros doit faire une pause d'une heure chaque jour pour continuer à pratiquer la magie ou les prodiges. Il récupère 4Pa grâce à la pause."
+  },
+  {
+    "numero": 53,
+    "nom": "Ressemble à rien",
+    "description": "Le héros est difficile à reconnaître parmi ses pairs. Lorsqu'il a nui à des PnJs, ceux-ci ont INT-5 pour le reconnaître (sauf s'il sort particulièrement du lot)."
+  },
+  {
+    "numero": 54,
+    "nom": "Roublard",
+    "description": "Le héros a ES+1, Pi+3 au CàC et Pi+3 aux attaques dans le dos et de côté."
+  },
+  {
+    "numero": 55,
+    "nom": "Runes bizarres",
+    "description": "Le héros peut déchiffrer les runes et écritures étranges sur épreuve INT+4."
+  },
+  {
+    "numero": 56,
+    "nom": "Sentir des pieds",
+    "description": "Quand il enlève ses bottes, le héros éloigne les prédateurs en bivouac. Il diminue d'un niveau la récupération des alliés dans les chambres partagées."
+  },
+  {
+    "numero": 57,
+    "nom": "Serrurier",
+    "description": "Le héros peut tenter de crocheter une serrure avec du matériel sans malus sur épreuve AD."
+  },
+  {
+    "numero": 58,
+    "nom": "Survivaliste",
+    "description": "Le héros ne mange que 2 repas par jour et a une récupération de 1Pv/H."
+  },
+  {
+    "numero": 59,
+    "nom": "Survivant",
+    "description": "En combat, après une esquive réussie, le héros peut attaquer sur 1à2 au D6. Il obtient Pv+3 lorsqu'il achève un ennemi."
+  },
+  {
+    "numero": 60,
+    "nom": "Tête vide",
+    "description": "Le héros résiste automatiquement aux sorts de prise de contrôle, terreur, illusion et télépathie."
+  },
+  {
+    "numero": 61,
+    "nom": "Tirer correctement",
+    "description": "Le héros peut utiliser des armes de tirs ou de jets sur épreuve AD au lieu de AT sans malus supplémentaire (en général AT-2 à bout portant)"
+  },
+  {
+    "numero": 62,
+    "nom": "Tomber dans les pièges",
+    "description": "Le héros se prend toujours le piège en premier s'il n'a pas été détecté."
+  },
+  {
+    "numero": 63,
+    "nom": "Tortionnaire",
+    "description": "Le héros a accès à l'arme \"Main nue de Tortionnaire\" au lieu de \"Main nue\" et aux coups spéciaux  et critiques à main nue. Il a Pi+1 au CàC et Pi+2 avec des armes de récupération."
+  },
+  {
+    "numero": 64,
+    "nom": "Truc de mauviette",
+    "description": "Le héros a PR nat+1 et ne perd pas connaissance des suites de la perte de Pv."
+  },
+  {
+    "numero": 65,
+    "nom": "Récupération vampirique",
+    "description": "Le héros regagne passivement 5Pa/H durant la nuit (doublé si pleine lune)."
+  },
+  {
+    "numero": 66,
+    "nom": "Vitalité vampire",
+    "description": "En combat, si le héros ne subit pas de dégâts, il regagne 1Pv/T (doublé la nuit)."
+  }
+]

@@ -1,1189 +1,4105 @@
 [
-	{
-		"ID": 1,
-		"Name_M": "Humain",
-		"Name_F": "Humaine",
-		"Min": {
-			"COU": 8,
-			"INT": 8,
-			"CHA": 8,
-			"AD": 8,
-			"FO": 8
-		},
-		"Max": {},
-		"Vitesse": 100,
-		"Metiers_impossibles": [
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 2,
-		"Name_M": "Barbare",
-		"Name_F": "Barbare",
-		"Min": {
-			"COU": 12,
-			"INT": 8,
-			"CHA": 8,
-			"AD": 8,
-			"FO": 13
-		},
-		"Max": {},
-		"Vitesse": 200,
-		"Metiers_impossibles": [
-			"bourgeois",
-			"noble",
-			"druide",
-			"cavalier",
-			"chevalier",
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"sorcier",
-			"mage",
-			"armurier_artificier",
-			"moine_peste",
-			"disciple"
-		]
-	},
-	{
-		"ID": 3,
-		"Name_M": "Nain",
-		"Name_F": "Naine",
-		"Min": {
-			"COU": 11,
-			"INT": 8,
-			"CHA": 8,
-			"AD": 8,
-			"FO": 12
-		},
-		"Max": {},
-		"Vitesse": 80,
-		"Metiers_impossibles": [
-			"chamane",
-			"druide",
-			"sorcier",
-			"mage",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 4,
-		"Name_M": "Haut Elfe",
-		"Name_F": "Haute Elfe",
-		"Min": {
-			"COU": 11,
-			"INT": 8,
-			"CHA": 8,
-			"AD": 8
-		},
-		"Max": {
-			"FO": 12
-		},
-		"Vitesse": 100,
-		"Metiers_impossibles": [
-			"chamane",
-			"dompteur",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 5,
-		"Name_M": "Demi-Elfe (H)",
-		"Name_F": "Demie-Elfe (H)",
-		"Min": {
-			"COU": 8,
-			"INT": 8,
-			"CHA": 10,
-			"AD": 11,
-			"FO": 8
-		},
-		"Max": {},
-		"Vitesse": 100,
-		"Metiers_impossibles": [
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 6,
-		"Name_M": "Demi-Elfe (E)",
-		"Name_F": "Demie-Elfe (E)",
-		"Min": {
-			"COU": 8,
-			"INT": 8,
-			"CHA": 10,
-			"AD": 11,
-			"FO": 8
-		},
-		"Max": {},
-		"Vitesse": 100,
-		"Metiers_impossibles": [
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 7,
-		"Name_M": "Elfe Sylvain",
-		"Name_F": "Elfe Sylvain",
-		"Min": {
-			"COU": 8,
-			"INT": 8,
-			"CHA": 12,
-			"AD": 10
-		},
-		"Max": {
-			"FO": 12
-		},
-		"Vitesse": 120,
-		"Metiers_impossibles": [
-			"bourreau",
-			"mage",
-			"sorcier",
-			"soldat_lourd",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 8,
-		"Name_M": "Elfe Noir",
-		"Name_F": "Elfe Noir",
-		"Min": {
-			"COU": 8,
-			"INT": 12,
-			"CHA": 8,
-			"AD": 13,
-			"FO": 8
-		},
-		"Max": {},
-		"Vitesse": 120,
-		"Metiers_impossibles": [
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 9,
-		"Name_M": "Orque",
-		"Name_F": "Orque",
-		"Min": {
-			"COU": 8,
-			"AD": 8,
-			"FO": 12
-		},
-		"Max": {
-			"INT": 8,
-			"CHA": 10
-		},
-		"Vitesse": 100,
-		"Metiers_impossibles": [
-			"druide",
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"sorcier",
-			"mage",
-			"officier",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 10,
-		"Name_M": "Demi-Orque (H)",
-		"Name_F": "Demie-Orque (H)",
-		"Min": {
-			"COU": 8,
-			"CHA": 8,
-			"FO": 12
-		},
-		"Max": {
-			"INT": 10,
-			"AD": 11
-		},
-		"Vitesse": 100,
-		"Metiers_impossibles": [
-			"druide",
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"sorcier",
-			"mage",
-			"officier",
-			"eclaireur",
-			"medecin",
-			"armurier_artificier",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 11,
-		"Name_M": "Demi-Orque (O)",
-		"Name_F": "Demie-Orque (O)",
-		"Min": {
-			"COU": 8,
-			"CHA": 8,
-			"FO": 12
-		},
-		"Max": {
-			"INT": 10,
-			"AD": 11
-		},
-		"Vitesse": 100,
-		"Metiers_impossibles": [
-			"druide",
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"sorcier",
-			"mage",
-			"officier",
-			"eclaireur",
-			"medecin",
-			"armurier_artificier",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 12,
-		"Name_M": "Gobelin",
-		"Name_F": "Gobeline",
-		"Min": {
-			"AD": 8
-		},
-		"Max": {
-			"COU": 10,
-			"INT": 10,
-			"CHA": 8,
-			"FO": 9
-		},
-		"Vitesse": 80,
-		"Metiers_impossibles": [
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"sorcier",
-			"mage",
-			"officier",
-			"eclaireur",
-			"soldat_lourd",
-			"medecin",
-			"armurier_artificier",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 13,
-		"Name_M": "Ogre",
-		"Name_F": "Ogresse",
-		"Min": {
-			"COU": 8,
-			"FO": 13
-		},
-		"Max": {
-			"INT": 9,
-			"CHA": 10,
-			"AD": 11
-		},
-		"Vitesse": 100,
-		"Metiers_impossibles": [
-			"chamane",
-			"druide",
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"sorcier",
-			"mage",
-			"officier",
-			"eclaireur",
-			"medecin",
-			"armurier_artificier",
-			"moine_peste",
-			"disciple"
-		]
-	},
-	{
-		"ID": 14,
-		"Name_M": "Hobbit",
-		"Name_F": "Hobbit",
-		"Min": {
-			"COU": 12,
-			"INT": 10,
-			"CHA": 8,
-			"AD": 8
-		},
-		"Max": {
-			"FO": 10
-		},
-		"Vitesse": 50,
-		"Metiers_impossibles": [
-			"chamane",
-			"druide",
-			"sorcier",
-			"mage",
-			"soldat",
-			"soldat_lourd",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 15,
-		"Name_M": "Gnôme",
-		"Name_F": "Gnôme",
-		"Min": {
-			"COU": 8,
-			"INT": 10,
-			"CHA": 8,
-			"AD": 13
-		},
-		"Max": {
-			"FO": 8
-		},
-		"Vitesse": 50,
-		"Metiers_impossibles": [
-			"druide",
-			"bourreau",
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"sorcier",
-			"mage",
-			"soldat",
-			"officier",
-			"eclaireur",
-			"soldat_lourd",
-			"medecin",
-			"armurier_artificier",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 16,
-		"Name_M": "Murloc",
-		"Name_F": "Murloc",
-		"Min": {
-			"COU": 13,
-			"INT": 8,
-			"CHA": 11,
-			"AD": 10,
-			"FO": 10
-		},
-		"Max": {},
-		"Vitesse": 80,
-		"Metiers_impossibles": [
-			"bourgeois",
-			"noble",
-			"cavalier",
-			"chevalier",
-			"bourreau",
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"officier",
-			"eclaireur",
-			"soldat_lourd",
-			"medecin",
-			"armurier_artificier",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 17,
-		"Name_M": "Troll",
-		"Name_F": "Troll",
-		"Min": {
-			"COU": 13,
-			"FO": 13
-		},
-		"Max": {
-			"INT": 10,
-			"CHA": 11,
-			"AD": 9
-		},
-		"Vitesse": 150,
-		"Metiers_impossibles": [
-			"ninja",
-			"assassin",
-			"voleur",
-			"ranger",
-			"marchand",
-			"negociant",
-			"ingenieur",
-			"pirate",
-			"bourgeois",
-			"noble",
-			"chamane",
-			"druide",
-			"cavalier",
-			"chevalier",
-			"bourreau",
-			"sbire",
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"sorcier",
-			"mage",
-			"dompteur",
-			"mage_pirate",
-			"soldat",
-			"officier",
-			"eclaireur",
-			"soldat_lourd",
-			"medecin",
-			"armurier_artificier",
-			"auxilliaire_militaire",
-			"moine_peste",
-			"disciple"
-		]
-	},
-	{
-		"ID": 18,
-		"Name_M": "Vampire",
-		"Name_F": "Vampire",
-		"Min": {
-			"COU": 13,
-			"INT": 13,
-			"CHA": 13,
-			"AD": 13,
-			"FO": 13
-		},
-		"Max": {},
-		"Vitesse": 100,
-		"Metiers_impossibles": [
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 19,
-		"Name_M": "Nain de la Mafia",
-		"Name_F": "Naine de la Mafia",
-		"Min": {
-			"COU": 10,
-			"INT": 11,
-			"CHA": 8,
-			"AD": 12,
-			"FO": 11
-		},
-		"Max": {},
-		"Vitesse": 80,
-		"Metiers_impossibles": [
-			"guerrier",
-			"gladiateur",
-			"ninja",
-			"assassin",
-			"ranger",
-			"menestrel",
-			"marchand",
-			"negociant",
-			"ingenieur",
-			"pirate",
-			"bourgeois",
-			"noble",
-			"chamane",
-			"druide",
-			"cavalier",
-			"chevalier",
-			"bourreau",
-			"sbire",
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"sorcier",
-			"mage",
-			"dompteur",
-			"mage_pirate",
-			"soldat",
-			"officier",
-			"eclaireur",
-			"soldat_lourd",
-			"medecin",
-			"armurier_artificier",
-			"auxilliaire_militaire",
-			"moine_peste",
-			"disciple"
-		]
-	},
-	{
-		"ID": 20,
-		"Name_M": "",
-		"Name_F": "Amazone Syldérienne",
-		"Min": {
-			"COU": 12,
-			"INT": 8,
-			"CHA": 12,
-			"AD": 11,
-			"FO": 12
-		},
-		"Max": {},
-		"Vitesse": 200,
-		"Metiers_impossibles": [
-			"menestrel",
-			"marchand",
-			"negociant",
-			"ingenieur",
-			"pirate",
-			"bourgeois",
-			"noble",
-			"chamane",
-			"druide",
-			"cavalier",
-			"chevalier",
-			"sbire",
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"sorcier",
-			"mage",
-			"dompteur",
-			"mage_pirate",
-			"soldat",
-			"officier",
-			"eclaireur",
-			"soldat_lourd",
-			"medecin",
-			"armurier_artificier",
-			"auxilliaire_militaire",
-			"moine_peste",
-			"disciple"
-		]
-	},
-	{
-		"ID": 21,
-		"Name_M": "Skaven",
-		"Name_F": "Skaven",
-		"Min": {
-			"COU": 8,
-			"INT": 8,
-			"CHA": 8,
-			"AD": 11
-		},
-		"Max": {
-			"FO": 12
-		},
-		"Vitesse": 111,
-		"Metiers_impossibles": [
-			"bourgeois",
-			"noble",
-			"druide",
-			"cavalier",
-			"chevalier",
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"sorcier",
-			"mage"
-		]
-	},
-	{
-		"ID": 22,
-		"Name_M": "Loup-Garou",
-		"Name_F": "Loup-Garou",
-		"Min": {
-			"COU": 13,
-			"INT": 13,
-			"CHA": 13,
-			"AD": 13,
-			"FO": 13
-		},
-		"Max": {},
-		"Vitesse": 111,
-		"Metiers_impossibles": [
-			"druide",
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"sorcier",
-			"mage",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 23,
-		"Name_M": "Changelin",
-		"Name_F": "Changeline",
-		"Min": {
-			"COU": 8,
-			"INT": 11,
-			"CHA": 8,
-			"AD": 12,
-			"FO": 8
-		},
-		"Max": {},
-		"Vitesse": 100,
-		"Metiers_impossibles": [
-			"soldat_lourd",
-			"armurier_artificier",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 24,
-		"Name_M": "Nain Duregar",
-		"Name_F": "Naine Duregar",
-		"Min": {
-			"COU": 11,
-			"INT": 8,
-			"CHA": 8,
-			"AD": 8,
-			"FO": 12
-		},
-		"Max": {},
-		"Vitesse": 80,
-		"Metiers_impossibles": [
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 25,
-		"Name_M": "Kobold",
-		"Name_F": "Kobold",
-		"Min": {
-			"COU": 8,
-			"INT": 12,
-			"CHA": 8,
-			"AD": 12
-		},
-		"Max": {
-			"FO": 10
-		},
-		"Vitesse": 80,
-		"Metiers_impossibles": [
-			"druide",
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"sorcier",
-			"mage",
-			"soldat_lourd",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 26,
-		"Name_M": "Minotaure",
-		"Name_F": "Minotaure",
-		"Min": {
-			"COU": 12,
-			"FO": 13
-		},
-		"Max": {
-			"INT": 11,
-			"CHA": 11,
-			"AD": 11
-		},
-		"Vitesse": 120,
-		"Metiers_impossibles": [
-			"bourgeois",
-			"noble",
-			"druide",
-			"cavalier",
-			"chevalier",
-			"bourreau",
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"sorcier",
-			"mage",
-			"officier",
-			"medecin",
-			"armurier_artificier",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 27,
-		"Name_M": "Homme-Lézard",
-		"Name_F": "Femme-Lézard",
-		"Min": {
-			"COU": 8,
-			"INT": 8,
-			"CHA": 8,
-			"AD": 11,
-			"FO": 8
-		},
-		"Max": {},
-		"Vitesse": 150,
-		"Metiers_impossibles": [
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 28,
-		"Name_M": "Incube",
-		"Name_F": "Succube",
-		"Min": {
-			"COU": 8,
-			"INT": 8,
-			"CHA": 12,
-			"AD": 11
-		},
-		"Max": {
-			"FO": 10
-		},
-		"Vitesse": 100,
-		"Metiers_impossibles": [
-			"soldat_lourd",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 29,
-		"Name_M": "Squelette sentient",
-		"Name_F": "Squelette sentient",
-		"Min": {
-			"COU": 13,
-			"INT": 10,
-			"AD": 11,
-			"FO": 8
-		},
-		"Max": {
-			"CHA": 8
-		},
-		"Vitesse": 100,
-		"Metiers_impossibles": [
-			"chamane",
-			"bourreau",
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"sorcier",
-			"mage",
-			"dompteur",
-			"officier",
-			"eclaireur",
-			"soldat_lourd",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 30,
-		"Name_M": "Homme-Légume",
-		"Name_F": "Femme-Légume",
-		"Min": {
-			"COU": 9,
-			"INT": 8,
-			"AD": 8
-		},
-		"Max": {
-			"CHA": 10,
-			"FO": 10
-		},
-		"Vitesse": 100,
-		"Metiers_impossibles": [
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"sorcier",
-			"mage",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 31,
-		"Name_M": "Fée",
-		"Name_F": "Fée",
-		"Min": {
-			"COU": 8,
-			"INT": 11,
-			"CHA": 12,
-			"AD": 11
-		},
-		"Max": {
-			"FO": 8
-		},
-		"Vitesse": 200,
-		"Metiers_impossibles": [
-			"chamane",
-			"bourreau",
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"sorcier",
-			"mage",
-			"soldat",
-			"officier",
-			"eclaireur",
-			"soldat_lourd",
-			"medecin",
-			"armurier_artificier",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 32,
-		"Name_M": "Demi-Démon",
-		"Name_F": "Demie-Démone",
-		"Min": {
-			"COU": 11,
-			"INT": 13,
-			"CHA": 13,
-			"AD": 12,
-			"FO": 8
-		},
-		"Max": {},
-		"Vitesse": 100,
-		"Metiers_impossibles": [
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 33,
-		"Name_M": "Drac",
-		"Name_F": "Draque",
-		"Min": {
-			"COU": 11,
-			"INT": 11,
-			"CHA": 11,
-			"AD": 11,
-			"FO": 11
-		},
-		"Max": {},
-		"Vitesse": 100,
-		"Metiers_impossibles": [
-			"chamane",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 34,
-		"Name_M": "Homme-bête (Caprin)",
-		"Name_F": "Femme-bête (Caprin)",
-		"Min": {
-			"COU": 10,
-			"INT": 8,
-			"AD": 11,
-			"FO": 11
-		},
-		"Max": {
-			"CHA": 10
-		},
-		"Vitesse": 150,
-		"Metiers_impossibles": [
-			"bourgeois",
-			"noble",
-			"cavalier",
-			"chevalier",
-			"dompteur",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 35,
-		"Name_M": "Homme-bête (Bovin/Porcin)",
-		"Name_F": "Femme-bête (Bovin/Porcin)",
-		"Min": {
-			"COU": 10,
-			"FO": 13
-		},
-		"Max": {
-			"INT": 11,
-			"CHA": 10,
-			"AD": 12
-		},
-		"Vitesse": 150,
-		"Metiers_impossibles": [
-			"bourgeois",
-			"noble",
-			"cavalier",
-			"chevalier",
-			"mage",
-			"sorcier",
-			"dompteur",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 36,
-		"Name_M": "Homme-bête (Canin)",
-		"Name_F": "Femme-bête (Canin)",
-		"Min": {
-			"COU": 10,
-			"INT": 13,
-			"AD": 10,
-			"FO": 10
-		},
-		"Max": {
-			"CHA": 10
-		},
-		"Vitesse": 150,
-		"Metiers_impossibles": [
-			"bourgeois",
-			"noble",
-			"cavalier",
-			"chevalier",
-			"dompteur",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 37,
-		"Name_M": "Kitsune",
-		"Name_F": "Kitsune",
-		"Min": {
-			"COU": 10,
-			"INT": 13,
-			"CHA": 9,
-			"AD": 11
-		},
-		"Max": {
-			"FO": 10
-		},
-		"Vitesse": 200,
-		"Metiers_impossibles": [
-			"bourgeois",
-			"noble",
-			"cavalier",
-			"chevalier",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"dompteur",
-			"soldat_lourd",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 38,
-		"Name_M": "Harpie",
-		"Name_F": "Harpie",
-		"Min": {
-			"COU": 10,
-			"INT": 10,
-			"CHA": 8,
-			"AD": 11
-		},
-		"Max": {
-			"FO": 12
-		},
-		"Vitesse": 120,
-		"Metiers_impossibles": [
-			"dompteur",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 39,
-		"Name_M": "Profond",
-		"Name_F": "Profonde",
-		"Min": {
-			"COU": 8,
-			"FO": 12
-		},
-		"Max": {
-			"INT": 10,
-			"CHA": 8,
-			"AD": 9
-		},
-		"Vitesse": 80,
-		"Metiers_impossibles": [
-			"bourgeois",
-			"noble",
-			"cavalier",
-			"chevalier",
-			"bourreau",
-			"pretre_slanoush",
-			"pretre_dlul",
-			"pretre_youclidh",
-			"pretre_adathie",
-			"paladin_dlul",
-			"paladin_brave",
-			"paladin_slanoush",
-			"paladin_khornettoh",
-			"sorcier",
-			"mage",
-			"dompteur",
-			"officier",
-			"eclaireur",
-			"medecin",
-			"armurier_artificier",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 40,
-		"Name_M": "Tengu",
-		"Name_F": "Tengu",
-		"Min": {
-			"INT": 13,
-			"CHA": 10,
-			"AD": 12
-		},
-		"Max": {
-			"COU": 12,
-			"FO": 12
-		},
-		"Vitesse": 100,
-		"Metiers_impossibles": [
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 41,
-		"Name_M": "Galéanthrope",
-		"Name_F": "Galéanthrope",
-		"Min": {
-			"COU": 13,
-			"INT": 11,
-			"CHA": 11,
-			"AD": 13,
-			"FO": 10
-		},
-		"Max": {},
-		"Vitesse": 200,
-		"Metiers_impossibles": [
-			"dompteur",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 42,
-		"Name_M": "Wukong",
-		"Name_F": "Wukong",
-		"Min": {
-			"AD": 11,
-			"FO": 8
-		},
-		"Max": {
-			"COU": 12,
-			"INT": 11,
-			"CHA": 11
-		},
-		"Vitesse": 120,
-		"Metiers_impossibles": [
-			"officier",
-			"soldat_lourd",
-			"armurier_artificier",
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 43,
-		"Name_M": "Naga",
-		"Name_F": "Naga",
-		"Min": {
-			"INT": 10,
-			"AD": 12,
-			"FO": 8
-		},
-		"Max": {
-			"COU": 10,
-			"CHA": 12
-		},
-		"Vitesse": 100,
-		"Metiers_impossibles": [
-			"moine_peste"
-		]
-	},
-	{
-		"ID": 44,
-		"Name_M": "Nelfe",
-		"Name_F": "Nelfe",
-		"Min": {
-			"COU": 11,
-			"INT": 12,
-			"CHA": 12,
-			"AD": 13,
-			"FO": 12
-		},
-		"Max": {},
-		"Vitesse": 120,
-		"Metiers_impossibles": [
-			"moine_peste"
-		]
-	}
+  {
+    "ID": 1,
+    "Name_M": "Humain",
+    "Name_F": "Humaine",
+    "Tags": [
+      "civilisé"
+    ],
+    "Race_tags": [],
+    "Min": {
+      "COU": 8,
+      "INT": 8,
+      "CHA": 8,
+      "AD": 8,
+      "FO": 8
+    },
+    "Max": {},
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 30,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": "illimité",
+    "Vitesse": 100,
+    "Taille": "Humaine",
+    "Langues": [
+      "Commune"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "normal",
+      "Vue": "normale",
+      "Nyctalopie": null
+    },
+    "Bonus_origine": {},
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      584,
+      722
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": "4 compétences parmi les compétences 1 à 66 sauf Chance du rempailleur et Parler aux animaux",
+    "Competences_developpables": [],
+    "Competences_developpables_nb": 4,
+    "Competences_developpables_note": "4 compétences parmi les compétences 1 à 66 sauf Chance du rempailleur et Parler aux animaux",
+    "Restrictions_equipement": [],
+    "Metiers_impossibles": [
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": null
+  },
+  {
+    "ID": 2,
+    "Name_M": "Barbare",
+    "Name_F": "Barbare",
+    "Tags": [
+      "sauvage"
+    ],
+    "Race_tags": [],
+    "Min": {
+      "COU": 12,
+      "FO": 13
+    },
+    "Max": {},
+    "AT": 9,
+    "PRD": 9,
+    "EV_initiale": 35,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": "illimité",
+    "Vitesse": 200,
+    "Taille": "1m90-2m20",
+    "Langues": [
+      "Commune"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "normal",
+      "Vue": "normale",
+      "Nyctalopie": null
+    },
+    "Bonus_origine": {
+      "FO": 1
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Standard",
+      "Grand"
+    ],
+    "Competences_innees": [
+      1,
+      18,
+      56,
+      60,
+      579,
+      585,
+      627,
+      88
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      8,
+      14,
+      19,
+      28,
+      37,
+      43,
+      47,
+      61,
+      64
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas d'armes complexes",
+      "Pas d'armures complète",
+      "Pas d'objets magiques sauf INT"
+    ],
+    "Metiers_impossibles": [
+      "bourgeois",
+      "noble",
+      "druide",
+      "cavalier",
+      "chevalier",
+      "pretre_slanoush",
+      "pretre_dlul",
+      "pretre_youclidh",
+      "pretre_adathie",
+      "paladin_dlul",
+      "paladin_brave",
+      "paladin_slanoush",
+      "paladin_khornettoh",
+      "sorcier",
+      "mage",
+      "armurier_artificier",
+      "moine_peste",
+      "disciple"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": null
+  },
+  {
+    "ID": 3,
+    "Name_M": "Nain",
+    "Name_F": "Naine",
+    "Tags": [
+      "civilisé"
+    ],
+    "Race_tags": [
+      "Nain"
+    ],
+    "Min": {
+      "COU": 11,
+      "FO": 12
+    },
+    "Max": {},
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 40,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": "illimité",
+    "Vitesse": 80,
+    "Taille": "1m20-1m30",
+    "Langues": [
+      "Commune",
+      "Nainscrit"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "faible",
+      "Vue": "normale",
+      "Nyctalopie": null
+    },
+    "Bonus_origine": {
+      "RM": 3,
+      "PER": -2
+    },
+    "Bonus_origine_conditionnel": [
+      {
+        "bonus": "AT+2",
+        "condition": "avec les armes Naines"
+      }
+    ],
+    "Materiel": [
+      "Petit"
+    ],
+    "Competences_innees": [
+      6,
+      36,
+      46,
+      51,
+      135,
+      136,
+      589,
+      577,
+      587,
+      626
+    ],
+    "Competences_choix_creation": [
+      [
+        613,
+        618,
+        581
+      ]
+    ],
+    "Competences_choix_creation_nb": 1,
+    "Competences_choix_creation_note": "1 compétence parmi : Expertise de la hache, Expertise du marteau, Campeur souterrain",
+    "Competences_developpables": [
+      3,
+      10,
+      14,
+      15,
+      18,
+      31,
+      29,
+      40,
+      64,
+      61
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [],
+    "Metiers_impossibles": [
+      "chamane",
+      "druide",
+      "sorcier",
+      "mage",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": null
+  },
+  {
+    "ID": 4,
+    "Name_M": "Haut Elfe",
+    "Name_F": "Haute Elfe",
+    "Tags": [
+      "civilisé"
+    ],
+    "Race_tags": [
+      "Elfe"
+    ],
+    "Min": {
+      "INT": 11,
+      "CHA": 12,
+      "AD": 12
+    },
+    "Max": {
+      "FO": 12
+    },
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 25,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 4,
+    "Transport_max": 10,
+    "Vitesse": 100,
+    "Taille": "Humaine",
+    "Langues": [
+      "Commune",
+      "Elfique"
+    ],
+    "Sens": {
+      "Ouie": "développée",
+      "Odorat": "normal",
+      "Vue": "surdéveloppée",
+      "Nyctalopie": "moyenne"
+    },
+    "Bonus_origine": {
+      "PER": 2
+    },
+    "Bonus_origine_conditionnel": [
+      {
+        "bonus": "EA initiale+10",
+        "condition": "si mage, sorcier, prêtre ou paladin"
+      }
+    ],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      27,
+      55,
+      62,
+      587,
+      588
+    ],
+    "Competences_choix_creation": [
+      [
+        593,
+        592,
+        630,
+        631
+      ]
+    ],
+    "Competences_choix_creation_nb": 1,
+    "Competences_choix_creation_note": "1 prière des Meuldors parmi 4 au choix",
+    "Competences_developpables": [
+      17,
+      19,
+      38,
+      43,
+      50,
+      61
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [],
+    "Metiers_impossibles": [
+      "chamane",
+      "dompteur",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": null
+  },
+  {
+    "ID": 5,
+    "Name_M": "Demi-Elfe (H)",
+    "Name_F": "Demie-Elfe (H)",
+    "Tags": [
+      "neutre"
+    ],
+    "Race_tags": [
+      "Elfe"
+    ],
+    "Min": {
+      "COU": 8,
+      "INT": 8,
+      "CHA": 10,
+      "AD": 11,
+      "FO": 8
+    },
+    "Max": {},
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 28,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 5,
+    "Transport_max": 15,
+    "Vitesse": 100,
+    "Taille": "Humaine",
+    "Langues": [
+      "Commune"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "normal",
+      "Vue": "surdéveloppée",
+      "Nyctalopie": "moyenne"
+    },
+    "Bonus_origine": {
+      "PER": 1
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      3,
+      25,
+      20,
+      40,
+      633,
+      634,
+      54
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      27,
+      19,
+      15,
+      28,
+      32,
+      41,
+      43,
+      61
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [],
+    "Metiers_impossibles": [
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Demi-Elfe issu d'un parent Humain"
+  },
+  {
+    "ID": 6,
+    "Name_M": "Demi-Elfe (E)",
+    "Name_F": "Demie-Elfe (E)",
+    "Tags": [
+      "neutre"
+    ],
+    "Race_tags": [
+      "Elfe"
+    ],
+    "Min": {
+      "COU": 8,
+      "INT": 8,
+      "CHA": 10,
+      "AD": 11,
+      "FO": 8
+    },
+    "Max": {},
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 28,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 5,
+    "Transport_max": 15,
+    "Vitesse": 100,
+    "Taille": "Humaine",
+    "Langues": [
+      "Commune"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "normal",
+      "Vue": "surdéveloppée",
+      "Nyctalopie": "moyenne"
+    },
+    "Bonus_origine": {
+      "PER": 1
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      3,
+      25,
+      20,
+      40,
+      633,
+      634,
+      54
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      27,
+      19,
+      15,
+      28,
+      32,
+      41,
+      43,
+      61
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [],
+    "Metiers_impossibles": [
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Demi-Elfe issu d'un parent Elfe"
+  },
+  {
+    "ID": 7,
+    "Name_M": "Elfe Sylvain",
+    "Name_F": "Elfe Sylvain",
+    "Tags": [
+      "sauvage"
+    ],
+    "Race_tags": [
+      "Elfe"
+    ],
+    "Min": {
+      "CHA": 12,
+      "AD": 10
+    },
+    "Max": {
+      "FO": 11
+    },
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 25,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 4,
+    "Transport_max": 10,
+    "Vitesse": 120,
+    "Taille": "Humaine",
+    "Langues": [
+      "Elfique",
+      "Commune",
+      "Entique"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "développé",
+      "Vue": "surdéveloppée",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "PER": 3
+    },
+    "Bonus_origine_conditionnel": [
+      {
+        "bonus": "AD tir+1",
+        "condition": "avec arcs"
+      }
+    ],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      19,
+      44,
+      50,
+      61,
+      62,
+      588,
+      635,
+      629,
+      604,
+      580
+    ],
+    "Competences_choix_creation": [
+      [
+        592,
+        631
+      ]
+    ],
+    "Competences_choix_creation_nb": 1,
+    "Competences_choix_creation_note": "1 prière des Meuldors parmi 2 au choix",
+    "Competences_developpables": [
+      21,
+      23,
+      38,
+      43,
+      47,
+      60
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas d'armes à poudre",
+      "Pas d'engin explosif",
+      "Pas d'engin incendiaire"
+    ],
+    "Metiers_impossibles": [
+      "bourreau",
+      "mage",
+      "sorcier",
+      "soldat_lourd",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": null
+  },
+  {
+    "ID": 8,
+    "Name_M": "Elfe Noir",
+    "Name_F": "Elfe Noir",
+    "Tags": [
+      "civilisé"
+    ],
+    "Race_tags": [
+      "Elfe"
+    ],
+    "Min": {
+      "INT": 12,
+      "AD": 13
+    },
+    "Max": {},
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 25,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 3,
+    "Transport_max": 15,
+    "Vitesse": 120,
+    "Taille": "Humaine",
+    "Langues": [
+      "Elfique",
+      "Commune",
+      "Draconique"
+    ],
+    "Sens": {
+      "Ouie": "surdéveloppée",
+      "Odorat": "développé",
+      "Vue": "surdéveloppée",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "PER": 3
+    },
+    "Bonus_origine_conditionnel": [
+      {
+        "bonus": "AD tir+1",
+        "condition": "avec arbalètes"
+      },
+      {
+        "bonus": "EA initiale+5",
+        "condition": "si Mage, mage pirate, mage sauvage, trappeur arcanique ou sorcier"
+      }
+    ],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      2,
+      23,
+      25,
+      61,
+      603,
+      600,
+      588,
+      635,
+      145,
+      581
+    ],
+    "Competences_choix_creation": [
+      [
+        593,
+        630,
+        631
+      ]
+    ],
+    "Competences_choix_creation_nb": 1,
+    "Competences_choix_creation_note": "1 prière des Meuldors parmi 3 au choix",
+    "Competences_developpables": [
+      27,
+      1,
+      20,
+      28,
+      29,
+      30,
+      40,
+      47,
+      55
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [],
+    "Metiers_impossibles": [
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Aussi appelé Drow. Ne peut pas être chamane."
+  },
+  {
+    "ID": 9,
+    "Name_M": "Orque",
+    "Name_F": "Orque",
+    "Tags": [
+      "sauvage"
+    ],
+    "Race_tags": [
+      "Peaux-verte"
+    ],
+    "Min": {
+      "COU": 8,
+      "FO": 12
+    },
+    "Max": {
+      "INT": 8,
+      "CHA": 10
+    },
+    "AT": 9,
+    "PRD": 9,
+    "EV_initiale": 35,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": "illimité",
+    "Vitesse": 100,
+    "Taille": "1m90-2m10",
+    "Langues": [
+      "Orc",
+      "Gobelin",
+      "Ogroïque",
+      "Commune"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "surdéveloppé",
+      "Vue": "faible",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "FO": 1,
+      "PER": 1
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Standard",
+      "Grand"
+    ],
+    "Competences_innees": [
+      2,
+      5,
+      6,
+      14,
+      35,
+      56,
+      60,
+      601,
+      597,
+      715,
+      586,
+      636
+    ],
+    "Competences_choix_creation": [
+      [
+        623,
+        608
+      ]
+    ],
+    "Competences_choix_creation_nb": 1,
+    "Competences_choix_creation_note": "1 expertise parmi 2 au choix",
+    "Competences_developpables": [
+      8,
+      18,
+      32,
+      37,
+      64
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [],
+    "Metiers_impossibles": [
+      "druide",
+      "pretre_slanoush",
+      "pretre_dlul",
+      "pretre_youclidh",
+      "pretre_adathie",
+      "paladin_dlul",
+      "paladin_brave",
+      "paladin_slanoush",
+      "paladin_khornettoh",
+      "sorcier",
+      "mage",
+      "officier",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Peut flairer le danger à 50m"
+  },
+  {
+    "ID": 10,
+    "Name_M": "Demi-Orque (H)",
+    "Name_F": "Demie-Orque (H)",
+    "Tags": [
+      "sauvage"
+    ],
+    "Race_tags": [
+      "Peaux-verte"
+    ],
+    "Min": {
+      "COU": 8,
+      "FO": 12
+    },
+    "Max": {
+      "INT": 10,
+      "AD": 11
+    },
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 35,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": "illimité",
+    "Vitesse": 100,
+    "Taille": "Humaine",
+    "Langues": [
+      "Orc",
+      "Commune"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "surdéveloppé",
+      "Vue": "normale",
+      "Nyctalopie": "moyenne"
+    },
+    "Bonus_origine": {
+      "PER": 1
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      2,
+      18,
+      35,
+      56,
+      60,
+      586,
+      633,
+      596,
+      134,
+      610,
+      582,
+      637
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      8,
+      14,
+      28,
+      32,
+      37,
+      43,
+      61,
+      64
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [],
+    "Metiers_impossibles": [
+      "druide",
+      "pretre_slanoush",
+      "pretre_dlul",
+      "pretre_youclidh",
+      "pretre_adathie",
+      "paladin_dlul",
+      "paladin_brave",
+      "paladin_slanoush",
+      "paladin_khornettoh",
+      "sorcier",
+      "mage",
+      "officier",
+      "eclaireur",
+      "medecin",
+      "armurier_artificier",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Peut flairer le danger à 25m. Issu d'un parent Humain."
+  },
+  {
+    "ID": 11,
+    "Name_M": "Demi-Orque (O)",
+    "Name_F": "Demie-Orque (O)",
+    "Tags": [
+      "sauvage"
+    ],
+    "Race_tags": [
+      "Peaux-verte"
+    ],
+    "Min": {
+      "COU": 8,
+      "FO": 12
+    },
+    "Max": {
+      "INT": 10,
+      "AD": 11
+    },
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 35,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": "illimité",
+    "Vitesse": 100,
+    "Taille": "Humaine",
+    "Langues": [
+      "Orc",
+      "Commune"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "surdéveloppé",
+      "Vue": "normale",
+      "Nyctalopie": "moyenne"
+    },
+    "Bonus_origine": {
+      "PER": 1
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      2,
+      18,
+      35,
+      56,
+      60,
+      586,
+      633,
+      596,
+      134,
+      610,
+      582,
+      637
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      8,
+      14,
+      28,
+      32,
+      37,
+      43,
+      61,
+      64
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [],
+    "Metiers_impossibles": [
+      "druide",
+      "pretre_slanoush",
+      "pretre_dlul",
+      "pretre_youclidh",
+      "pretre_adathie",
+      "paladin_dlul",
+      "paladin_brave",
+      "paladin_slanoush",
+      "paladin_khornettoh",
+      "sorcier",
+      "mage",
+      "officier",
+      "eclaireur",
+      "medecin",
+      "armurier_artificier",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Peut flairer le danger à 25m. Issu d'un parent Orque."
+  },
+  {
+    "ID": 12,
+    "Name_M": "Gobelin",
+    "Name_F": "Gobeline",
+    "Tags": [
+      "sauvage"
+    ],
+    "Race_tags": [
+      "Peaux-verte"
+    ],
+    "Min": {
+      "AD": 8
+    },
+    "Max": {
+      "COU": 10,
+      "INT": 10,
+      "CHA": 8,
+      "FO": 9
+    },
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 20,
+    "EV_par_niveau": "1D4",
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": 10,
+    "Vitesse": 80,
+    "Taille": "1m-1m10",
+    "Langues": [
+      "Gobeline",
+      "Orc"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "surdéveloppé",
+      "Vue": "développée",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "PER": 2
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Petit"
+    ],
+    "Competences_innees": [
+      2,
+      3,
+      5,
+      11,
+      35,
+      36,
+      56,
+      60,
+      638,
+      586,
+      588,
+      616,
+      639,
+      640
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      15,
+      24,
+      28,
+      29
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [],
+    "Metiers_impossibles": [
+      "pretre_slanoush",
+      "pretre_dlul",
+      "pretre_youclidh",
+      "pretre_adathie",
+      "paladin_dlul",
+      "paladin_brave",
+      "paladin_slanoush",
+      "paladin_khornettoh",
+      "sorcier",
+      "mage",
+      "officier",
+      "eclaireur",
+      "soldat_lourd",
+      "medecin",
+      "armurier_artificier",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Peut flairer le danger à 50m"
+  },
+  {
+    "ID": 13,
+    "Name_M": "Ogre",
+    "Name_F": "Ogresse",
+    "Tags": [
+      "neutre"
+    ],
+    "Race_tags": [
+      "Peaux-verte",
+      "Monstre"
+    ],
+    "Min": {
+      "COU": 8,
+      "FO": 13
+    },
+    "Max": {
+      "INT": 9,
+      "CHA": 10,
+      "AD": 11
+    },
+    "AT": 9,
+    "PRD": 9,
+    "EV_initiale": 45,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 4,
+    "Transport_max": "illimité",
+    "Vitesse": 100,
+    "Taille": "2m20-2m50",
+    "Langues": [
+      "Ogroïque"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "surdéveloppé",
+      "Vue": "normale",
+      "Nyctalopie": null
+    },
+    "Bonus_origine": {
+      "FO": 2
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Grand"
+    ],
+    "Competences_innees": [
+      7,
+      6,
+      8,
+      35,
+      37,
+      56,
+      60,
+      579,
+      132,
+      105,
+      88,
+      136,
+      145,
+      602
+    ],
+    "Competences_choix_creation": [
+      [
+        661
+      ]
+    ],
+    "Competences_choix_creation_nb": 1,
+    "Competences_choix_creation_note": "Optionnel : peut échanger jusqu'à 3 points AT ou PRD contre Pi au CàC et obtient Puissant+I",
+    "Competences_developpables": [
+      14,
+      32,
+      39,
+      64,
+      641
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [],
+    "Metiers_impossibles": [
+      "chamane",
+      "druide",
+      "pretre_slanoush",
+      "pretre_dlul",
+      "pretre_youclidh",
+      "pretre_adathie",
+      "paladin_dlul",
+      "paladin_brave",
+      "paladin_slanoush",
+      "paladin_khornettoh",
+      "sorcier",
+      "mage",
+      "officier",
+      "eclaireur",
+      "medecin",
+      "armurier_artificier",
+      "moine_peste",
+      "disciple"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Parle la langue commune sur INT. Peut flairer le danger à 50m."
+  },
+  {
+    "ID": 14,
+    "Name_M": "Hobbit",
+    "Name_F": "Hobbit",
+    "Tags": [
+      "civilisé"
+    ],
+    "Race_tags": [],
+    "Min": {
+      "COU": 12,
+      "INT": 10
+    },
+    "Max": {
+      "FO": 10
+    },
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 25,
+    "EV_par_niveau": "1D4",
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 3,
+    "Transport_max": 10,
+    "Vitesse": 50,
+    "Taille": "1m-1m10",
+    "Langues": [
+      "Commune"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "normal",
+      "Vue": "normale",
+      "Nyctalopie": null
+    },
+    "Bonus_origine": {},
+    "Bonus_origine_conditionnel": [
+      {
+        "bonus": "AD tir+1",
+        "condition": "avec lance-pierres et frondes"
+      }
+    ],
+    "Materiel": [
+      "Petit"
+    ],
+    "Competences_innees": [
+      6,
+      11,
+      22,
+      35,
+      53,
+      599,
+      595,
+      245,
+      642
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      27,
+      3,
+      20,
+      31,
+      32,
+      30,
+      36,
+      41,
+      61
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas d'armure complète",
+      "Pas de chaussures sauf spéciales"
+    ],
+    "Metiers_impossibles": [
+      "chamane",
+      "druide",
+      "sorcier",
+      "mage",
+      "soldat",
+      "soldat_lourd",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Aussi appelé Semi-Homme"
+  },
+  {
+    "ID": 15,
+    "Name_M": "Gnôme",
+    "Name_F": "Gnôme",
+    "Tags": [
+      "neutre"
+    ],
+    "Race_tags": [
+      "Peaux-verte"
+    ],
+    "Min": {
+      "INT": 10,
+      "AD": 13
+    },
+    "Max": {
+      "FO": 8
+    },
+    "AT": 10,
+    "PRD": 8,
+    "EV_initiale": 15,
+    "EV_par_niveau": "1D4",
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 2,
+    "Transport_max": 2,
+    "Vitesse": 50,
+    "Taille": "60cm",
+    "Langues": [
+      "Gnome",
+      "Gobeline",
+      "Draconique"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "normal",
+      "Vue": "normale",
+      "Nyctalopie": null
+    },
+    "Bonus_origine": {
+      "AD": 1,
+      "ES": 2,
+      "PER": 1
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Très Petit"
+    ],
+    "Competences_innees": [
+      1,
+      3,
+      19,
+      20,
+      23,
+      36,
+      643,
+      644,
+      174,
+      111
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      21,
+      24,
+      25,
+      28,
+      38,
+      41,
+      43,
+      57
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [],
+    "Metiers_impossibles": [
+      "druide",
+      "bourreau",
+      "pretre_slanoush",
+      "pretre_dlul",
+      "pretre_youclidh",
+      "pretre_adathie",
+      "paladin_dlul",
+      "paladin_brave",
+      "paladin_slanoush",
+      "paladin_khornettoh",
+      "sorcier",
+      "mage",
+      "soldat",
+      "officier",
+      "eclaireur",
+      "soldat_lourd",
+      "medecin",
+      "armurier_artificier",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": null
+  },
+  {
+    "ID": 16,
+    "Name_M": "Murloc",
+    "Name_F": "Murloc",
+    "Tags": [
+      "sauvage"
+    ],
+    "Race_tags": [
+      "Animaux"
+    ],
+    "Min": {
+      "COU": 13,
+      "CHA": 11,
+      "AD": 10
+    },
+    "Max": {
+      "FO": 10
+    },
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 28,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": 15,
+    "Vitesse": 80,
+    "Taille": "1m20",
+    "Langues": [
+      "Mrrglais",
+      "R'lyehian"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "normal",
+      "Vue": "très développée",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "PER": 2,
+      "AD": 1,
+      "COU": 1
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Petit"
+    ],
+    "Competences_innees": [
+      135,
+      75,
+      76,
+      43,
+      37,
+      660,
+      575,
+      610,
+      703,
+      169,
+      537,
+      708,
+      647,
+      586
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      64,
+      35,
+      18,
+      39,
+      40,
+      47,
+      61,
+      25,
+      32,
+      29
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas d'arc ni d'arbalète",
+      "Pas d'armes à poudre",
+      "Pas d'armure au torse sauf spéciale"
+    ],
+    "Metiers_impossibles": [
+      "bourgeois",
+      "noble",
+      "cavalier",
+      "chevalier",
+      "bourreau",
+      "pretre_slanoush",
+      "pretre_dlul",
+      "pretre_youclidh",
+      "pretre_adathie",
+      "paladin_dlul",
+      "paladin_brave",
+      "paladin_slanoush",
+      "paladin_khornettoh",
+      "officier",
+      "eclaireur",
+      "soldat_lourd",
+      "medecin",
+      "armurier_artificier",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": null
+  },
+  {
+    "ID": 17,
+    "Name_M": "Troll",
+    "Name_F": "Troll",
+    "Tags": [
+      "sauvage"
+    ],
+    "Race_tags": [
+      "Peaux-verte",
+      "Monstre"
+    ],
+    "Min": {
+      "COU": 13,
+      "FO": 13
+    },
+    "Max": {
+      "INT": 10,
+      "CHA": 11,
+      "AD": 9
+    },
+    "AT": 9,
+    "PRD": 9,
+    "EV_initiale": 60,
+    "EV_par_niveau": "1D8",
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 2,
+    "Transport_max": "illimité",
+    "Vitesse": 150,
+    "Taille": "2m20-3m10",
+    "Langues": [
+      "Entique",
+      "Ogroïque"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "très développé",
+      "Vue": "normale",
+      "Nyctalopie": null
+    },
+    "Bonus_origine": {
+      "FO": 3,
+      "PER": -3
+    },
+    "Bonus_origine_conditionnel": [
+      {
+        "bonus": "PR nat+2",
+        "condition": "naturel"
+      }
+    ],
+    "Materiel": [
+      "Très Grand"
+    ],
+    "Competences_innees": [
+      125,
+      7,
+      8,
+      35,
+      37,
+      128,
+      56,
+      60,
+      129,
+      130,
+      77,
+      78,
+      133,
+      203,
+      105,
+      589,
+      588,
+      586,
+      647
+    ],
+    "Competences_choix_creation": [
+      [
+        661
+      ]
+    ],
+    "Competences_choix_creation_nb": 1,
+    "Competences_choix_creation_note": "Optionnel : peut échanger jusqu'à 3 points AT ou PRD contre Pi au CàC et obtient Puissant+I",
+    "Competences_developpables": [
+      14,
+      18,
+      22,
+      32,
+      131,
+      64
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas d'armes complexes",
+      "Pas d'équipement magique"
+    ],
+    "Metiers_impossibles": [],
+    "Metiers_exclusifs": [
+      "guerrier",
+      "gladiateur",
+      "menestrel"
+    ],
+    "Notes_speciales": "Peut flairer le danger à 50m. Langue supplémentaire : Orc ou Gobeline au choix."
+  },
+  {
+    "ID": 18,
+    "Name_M": "Vampire",
+    "Name_F": "Vampire",
+    "Tags": [
+      "civilisé"
+    ],
+    "Race_tags": [
+      "Mort-vivant"
+    ],
+    "Min": {
+      "COU": 13,
+      "INT": 13,
+      "CHA": 13,
+      "AD": 13,
+      "FO": 13
+    },
+    "Max": {},
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 30,
+    "EV_par_niveau": null,
+    "EA_initiale": 20,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": "illimité",
+    "Vitesse": 100,
+    "Taille": "2m ou selon origine",
+    "Langues": [
+      "Vontorzien"
+    ],
+    "Sens": {
+      "Ouie": "très développée",
+      "Odorat": "très développé",
+      "Vue": "très développée",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "FO": 2,
+      "CHA": 2
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Standard",
+      "Grand"
+    ],
+    "Competences_innees": [
+      673,
+      37,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      88,
+      198,
+      597,
+      715
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": "2 compétences conservées de l'origine initiale",
+    "Competences_developpables": [
+      23,
+      3,
+      27,
+      73,
+      50,
+      39,
+      8,
+      55
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas d'équipement ou d'armement béni",
+      "Pas d'équipement de la magie du feu",
+      "Pas de robes de mage ou sorcier"
+    ],
+    "Metiers_impossibles": [
+      "pretre_slanoush",
+      "pretre_dlul",
+      "pretre_youclidh",
+      "pretre_adathie",
+      "paladin_dlul",
+      "paladin_brave",
+      "paladin_slanoush",
+      "paladin_khornettoh",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "A la création lancer 3D20 — si un dé fait 1, appliquer un effet spécial. A accès à la magie vampirique. Monte en niveau via Puissance Sanguine."
+  },
+  {
+    "ID": 19,
+    "Name_M": "Nain de la Mafia",
+    "Name_F": "Naine de la Mafia",
+    "Tags": [
+      "civilisé"
+    ],
+    "Race_tags": [
+      "Nain"
+    ],
+    "Min": {
+      "COU": 10,
+      "INT": 11,
+      "AD": 12,
+      "FO": 11
+    },
+    "Max": {},
+    "AT": 10,
+    "PRD": 9,
+    "EV_initiale": 38,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 5,
+    "Transport_max": 8,
+    "Vitesse": 80,
+    "Taille": "1m20-1m30",
+    "Langues": [
+      "Commune",
+      "Nainscrit"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "faible",
+      "Vue": "normale",
+      "Nyctalopie": null
+    },
+    "Bonus_origine": {
+      "RM": 1
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Petit"
+    ],
+    "Competences_innees": [
+      6,
+      136,
+      36,
+      51,
+      1,
+      628,
+      14,
+      20,
+      53,
+      54,
+      13,
+      574,
+      589,
+      587
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      47,
+      25,
+      10,
+      15,
+      31,
+      40,
+      61,
+      24
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas de bouclier",
+      "N'utilise pas d'armes à 2 mains même avec Armes de bourrins"
+    ],
+    "Metiers_impossibles": [],
+    "Metiers_exclusifs": [
+      "voleur"
+    ],
+    "Notes_speciales": "Métier obligatoire : Voleur"
+  },
+  {
+    "ID": 20,
+    "Name_M": "",
+    "Name_F": "Amazone Syldérienne",
+    "Tags": [
+      "sauvage"
+    ],
+    "Race_tags": [],
+    "Min": {
+      "COU": 12,
+      "CHA": 12,
+      "AD": 11,
+      "FO": 12
+    },
+    "Max": {},
+    "AT": 10,
+    "PRD": 8,
+    "EV_initiale": 38,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 6,
+    "Transport_max": "illimité",
+    "Vitesse": 200,
+    "Taille": "1m90-2m10",
+    "Langues": [
+      "Commune"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "normal",
+      "Vue": "normale",
+      "Nyctalopie": null
+    },
+    "Bonus_origine": {
+      "FO": 1,
+      "ES": 1
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Standard",
+      "Grand"
+    ],
+    "Competences_innees": [
+      11,
+      18,
+      14,
+      60,
+      19,
+      64,
+      9,
+      59,
+      12,
+      33,
+      "Connaissance des steppes",
+      585,
+      627
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      28,
+      37,
+      43,
+      47,
+      61,
+      35,
+      579
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas de bouclier",
+      "Seuls arcs, javelots et assimilés autorisés comme armes à distance"
+    ],
+    "Metiers_impossibles": [],
+    "Metiers_exclusifs": [
+      "assassin",
+      "voleur",
+      "ranger",
+      "guerrier",
+      "dompteur",
+      "bourreau"
+    ],
+    "Notes_speciales": null
+  },
+  {
+    "ID": 21,
+    "Name_M": "Skaven",
+    "Name_F": "Skaven",
+    "Tags": [
+      "sauvage"
+    ],
+    "Race_tags": [
+      "Animaux"
+    ],
+    "Min": {
+      "AD": 11
+    },
+    "Max": {
+      "FO": 12
+    },
+    "AT": 10,
+    "PRD": 9,
+    "EV_initiale": 15,
+    "EV_par_niveau": "1D4",
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 5,
+    "Transport_max": 8,
+    "Vitesse": 111,
+    "Taille": "1m90-2m30 (recroquevillé : 1m60)",
+    "Langues": [
+      "Queekish",
+      "Commune"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "très développé",
+      "Vue": "normale",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "AD": 1,
+      "COU": -1,
+      "PER": 2
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Petit",
+      "Standard"
+    ],
+    "Competences_innees": [
+      3,
+      36,
+      32,
+      28,
+      23,
+      81,
+      564,
+      51,
+      83,
+      721,
+      586,
+      587,
+      590,
+      756
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      84,
+      86,
+      27,
+      1,
+      8,
+      43,
+      47,
+      61,
+      87
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas d'équipement ou d'armement béni"
+    ],
+    "Metiers_impossibles": [
+      "bourgeois",
+      "noble",
+      "cavalier",
+      "chevalier",
+      "pretre_slanoush",
+      "pretre_dlul",
+      "pretre_youclidh",
+      "pretre_adathie",
+      "paladin_dlul",
+      "paladin_brave",
+      "paladin_slanoush",
+      "paladin_khornettoh",
+      "sorcier",
+      "mage"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Aussi appelé Homme-rat. Possède une longue queue non dissimulable. Peut flairer le danger à 50m."
+  },
+  {
+    "ID": 22,
+    "Name_M": "Loup-Garou",
+    "Name_F": "Loup-Garou",
+    "Tags": [
+      "sauvage"
+    ],
+    "Race_tags": [
+      "Créature magique",
+      "Monstre"
+    ],
+    "Min": {
+      "COU": 13,
+      "INT": 13,
+      "CHA": 13,
+      "AD": 13,
+      "FO": 13
+    },
+    "Max": {},
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 0,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": "illimité",
+    "Vitesse": 111,
+    "Taille": "Origine et 2m30-3m30 transformé",
+    "Langues": [
+      "Commune ou selon origine"
+    ],
+    "Sens": {
+      "Ouie": "développée",
+      "Odorat": "développé",
+      "Vue": "normale",
+      "Nyctalopie": "moyenne"
+    },
+    "Bonus_origine": {
+      "COU": 2,
+      "FO": 3
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      89,
+      70,
+      71,
+      90,
+      94,
+      95,
+      96,
+      97,
+      721,
+      590,
+      587,
+      586,
+      719
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas d'équipement ou d'armement béni"
+    ],
+    "Metiers_impossibles": [
+      "druide",
+      "pretre_slanoush",
+      "pretre_dlul",
+      "pretre_youclidh",
+      "pretre_adathie",
+      "paladin_dlul",
+      "paladin_brave",
+      "paladin_slanoush",
+      "paladin_khornettoh",
+      "sorcier",
+      "mage",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "A la création lancer 3D20 — si un dé fait 20, appliquer un effet spécial. EV selon origine. Compétences de loup-garou supplémentaires lors de la transformation."
+  },
+  {
+    "ID": 23,
+    "Name_M": "Changelin",
+    "Name_F": "Changeline",
+    "Tags": [
+      "neutre"
+    ],
+    "Race_tags": [
+      "Créature magique"
+    ],
+    "Min": {
+      "INT": 11,
+      "AD": 12
+    },
+    "Max": {},
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 20,
+    "EV_par_niveau": "1D4",
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": 10,
+    "Vitesse": 100,
+    "Taille": "1m-1m20",
+    "Langues": [
+      "Entique",
+      "Féérique",
+      "Elfique"
+    ],
+    "Sens": {
+      "Ouie": "développée",
+      "Odorat": "développé",
+      "Vue": "développée",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "PER": 3,
+      "ES": 1
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Petit"
+    ],
+    "Competences_innees": [
+      2,
+      3,
+      23,
+      104,
+      161,
+      171,
+      662,
+      590,
+      616
+    ],
+    "Competences_choix_creation": [
+      [
+        33,
+        62,
+        173
+      ]
+    ],
+    "Competences_choix_creation_nb": 1,
+    "Competences_choix_creation_note": "1 défaut parmi : Ignorant, Tomber dans les pièges, Aquaphobe",
+    "Competences_developpables": [
+      1,
+      134,
+      25,
+      57,
+      61,
+      111
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [],
+    "Metiers_impossibles": [
+      "soldat_lourd",
+      "armurier_artificier",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Peut flairer le danger à 20m"
+  },
+  {
+    "ID": 24,
+    "Name_M": "Nain Duregar",
+    "Name_F": "Naine Duregar",
+    "Tags": [
+      "civilisé"
+    ],
+    "Race_tags": [
+      "Nain"
+    ],
+    "Min": {
+      "COU": 11,
+      "FO": 12
+    },
+    "Max": {},
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 35,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": "illimité",
+    "Vitesse": 80,
+    "Taille": "1m20-1m30",
+    "Langues": [
+      "Nainscrit",
+      "Commune",
+      "Démonique"
+    ],
+    "Sens": {
+      "Ouie": "développée",
+      "Odorat": "développé",
+      "Vue": "développée",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "ES": 1
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Petit"
+    ],
+    "Competences_innees": [
+      2,
+      6,
+      35,
+      32,
+      46,
+      60,
+      135,
+      112,
+      136,
+      586,
+      589,
+      663,
+      596,
+      581
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      3,
+      14,
+      15,
+      18,
+      29,
+      36,
+      40,
+      51,
+      61,
+      64,
+      111
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas d'arc"
+    ],
+    "Metiers_impossibles": [
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Peut flairer le danger à 20m"
+  },
+  {
+    "ID": 25,
+    "Name_M": "Kobold",
+    "Name_F": "Kobold",
+    "Tags": [
+      "sauvage"
+    ],
+    "Race_tags": [
+      "Draconidé"
+    ],
+    "Min": {
+      "INT": 12,
+      "AD": 12
+    },
+    "Max": {
+      "FO": 10
+    },
+    "AT": 10,
+    "PRD": 8,
+    "EV_initiale": 15,
+    "EV_par_niveau": "1D4",
+    "EA_initiale": 20,
+    "EA_par_niveau": null,
+    "PR_sol_max": 2,
+    "Transport_max": 3,
+    "Vitesse": 80,
+    "Taille": "70cm",
+    "Langues": [
+      "Draconique",
+      "Commune"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "développé",
+      "Vue": "développée",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "PER": 2,
+      "AD": 1
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Petit"
+    ],
+    "Competences_innees": [
+      3,
+      125,
+      11,
+      20,
+      27,
+      46,
+      126,
+      "PR magique naturelle des Kobold",
+      650,
+      664,
+      665,
+      590,
+      145
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      1,
+      102,
+      23,
+      28,
+      27
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [],
+    "Metiers_impossibles": [
+      "druide",
+      "pretre_slanoush",
+      "pretre_dlul",
+      "pretre_youclidh",
+      "pretre_adathie",
+      "paladin_dlul",
+      "paladin_brave",
+      "paladin_slanoush",
+      "paladin_khornettoh",
+      "sorcier",
+      "mage",
+      "soldat_lourd",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "A accès à la magie Kobold. Peut flairer le danger à 25m. Possède une large queue non dissimulable."
+  },
+  {
+    "ID": 26,
+    "Name_M": "Minotaure",
+    "Name_F": "Minotaure",
+    "Tags": [
+      "sauvage"
+    ],
+    "Race_tags": [
+      "Animaux",
+      "Démon",
+      "Monstre"
+    ],
+    "Min": {
+      "COU": 12,
+      "FO": 13
+    },
+    "Max": {
+      "INT": 11,
+      "CHA": 11,
+      "AD": 11
+    },
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 50,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 4,
+    "Transport_max": "illimité",
+    "Vitesse": 120,
+    "Taille": "2m30-2m80",
+    "Langues": [
+      "Animalique",
+      "Ogroïque",
+      "Démonique"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "développé",
+      "Vue": "normale",
+      "Nyctalopie": null
+    },
+    "Bonus_origine": {
+      "FO": 2,
+      "PER": -3
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Grand",
+      "Très Grand"
+    ],
+    "Competences_innees": [
+      125,
+      105,
+      47,
+      154,
+      103,
+      107,
+      127,
+      108,
+      133,
+      132,
+      88,
+      586,
+      662,
+      34,
+      648
+    ],
+    "Competences_choix_creation": [
+      [
+        661
+      ]
+    ],
+    "Competences_choix_creation_nb": 1,
+    "Competences_choix_creation_note": "Optionnel : peut échanger jusqu'à 3 points AT ou PRD contre Pi au CàC et obtient Puissant+I",
+    "Competences_developpables": [
+      8,
+      1,
+      14,
+      18,
+      21,
+      611,
+      51,
+      64
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas de bouclier",
+      "Pas de casque sauf spécial",
+      "Pas de chaussures",
+      "Pas d'armes à poudre"
+    ],
+    "Metiers_impossibles": [
+      "bourgeois",
+      "noble",
+      "druide",
+      "cavalier",
+      "chevalier",
+      "bourreau",
+      "pretre_slanoush",
+      "pretre_dlul",
+      "pretre_youclidh",
+      "pretre_adathie",
+      "paladin_dlul",
+      "paladin_brave",
+      "paladin_slanoush",
+      "paladin_khornettoh",
+      "sorcier",
+      "mage",
+      "officier",
+      "medecin",
+      "armurier_artificier",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Peut flairer le danger à 25m"
+  },
+  {
+    "ID": 27,
+    "Name_M": "Homme-Lézard",
+    "Name_F": "Femme-Lézard",
+    "Tags": [
+      "neutre"
+    ],
+    "Race_tags": [
+      "Draconidé",
+      "Animaux"
+    ],
+    "Min": {
+      "AD": 11
+    },
+    "Max": {},
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 30,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 4,
+    "Transport_max": "illimité",
+    "Vitesse": 150,
+    "Taille": "1m50-2m20",
+    "Langues": [
+      "Draconique",
+      "Commune"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "très développé",
+      "Vue": "faible",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "PER": 2,
+      "AD": 2,
+      "ES": 2
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      23,
+      25,
+      35,
+      43,
+      109,
+      110,
+      671,
+      587,
+      707
+    ],
+    "Competences_choix_creation": [
+      [
+        688,
+        724,
+        745,
+        742,
+        690,
+        687
+      ]
+    ],
+    "Competences_choix_creation_nb": 1,
+    "Competences_choix_creation_note": "1 archétype parmi 6 au choix",
+    "Competences_developpables": [
+      3,
+      21,
+      24,
+      47,
+      61,
+      64,
+      660
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas de masque sauf spécial"
+    ],
+    "Metiers_impossibles": [
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Possède une large queue non dissimulable. Peut flairer le danger à 100m."
+  },
+  {
+    "ID": 28,
+    "Name_M": "Incube",
+    "Name_F": "Succube",
+    "Tags": [
+      "civilisé"
+    ],
+    "Race_tags": [
+      "Démon"
+    ],
+    "Min": {
+      "CHA": 12,
+      "AD": 11
+    },
+    "Max": {
+      "FO": 10
+    },
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 30,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 4,
+    "Transport_max": 1,
+    "Vitesse": 100,
+    "Taille": "Humaine",
+    "Langues": [
+      "Commune",
+      "Démonique"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "normal",
+      "Vue": "normale",
+      "Nyctalopie": null
+    },
+    "Bonus_origine": {
+      "CHA": 1
+    },
+    "Bonus_origine_conditionnel": [
+      {
+        "bonus": "1 MC (Marque du Chaos)",
+        "condition": "à la création"
+      },
+      {
+        "bonus": "3 SM (Signes Maléfiques)",
+        "condition": "à la création"
+      },
+      {
+        "bonus": "1 MC par niveau pair",
+        "condition": "montée en niveau"
+      },
+      {
+        "bonus": "1 SM par niveau",
+        "condition": "montée en niveau"
+      }
+    ],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      737,
+      705,
+      27,
+      621,
+      118,
+      117,
+      138,
+      111,
+      115,
+      113,
+      691,
+      657,
+      646,
+      597,
+      598
+    ],
+    "Competences_choix_creation": [
+      [
+        "Rives du Phlégéton",
+        "Vue sur le Styx"
+      ]
+    ],
+    "Competences_choix_creation_nb": 1,
+    "Competences_choix_creation_note": "1 archétype parmi 2 au choix",
+    "Competences_developpables": [
+      102,
+      17,
+      19,
+      25,
+      38,
+      31,
+      40,
+      61,
+      55
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas d'armement ou d'équipement béni"
+    ],
+    "Metiers_impossibles": [
+      "soldat_lourd",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Gagne 1 SM par niveau et 1 MC par niveau pair. Peut choisir des compétences spéciales selon ses MC et des bonus selon ses SM."
+  },
+  {
+    "ID": 29,
+    "Name_M": "Squelette sentient",
+    "Name_F": "Squelette sentient",
+    "Tags": [
+      "civilisé"
+    ],
+    "Race_tags": [
+      "Mort-vivant"
+    ],
+    "Min": {
+      "COU": 13,
+      "INT": 10,
+      "AD": 11
+    },
+    "Max": {
+      "CHA": 8
+    },
+    "AT": 10,
+    "PRD": 8,
+    "EV_initiale": 20,
+    "EV_par_niveau": null,
+    "EA_initiale": 20,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": 10,
+    "Vitesse": 100,
+    "Taille": "Humaine",
+    "Langues": [
+      "Vontorzien",
+      "Démonique",
+      "R'lyehian",
+      "Entique",
+      "Elfique",
+      "Corvine"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "très faible",
+      "Vue": "faible de jour",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "COU": 3,
+      "RM": 1,
+      "PER": -4
+    },
+    "Bonus_origine_conditionnel": [
+      {
+        "bonus": "Accès aux SRS de Nécromancie d'1 niveau supérieur",
+        "condition": "toujours"
+      }
+    ],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      737,
+      71,
+      119,
+      27,
+      34,
+      145,
+      55,
+      144,
+      120,
+      597,
+      114,
+      122,
+      734
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      3,
+      15,
+      17,
+      18,
+      19,
+      23,
+      25,
+      179,
+      40,
+      111,
+      749
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas d'armement ou d'équipement béni"
+    ],
+    "Metiers_impossibles": [
+      "chamane",
+      "bourreau",
+      "pretre_slanoush",
+      "pretre_dlul",
+      "pretre_youclidh",
+      "pretre_adathie",
+      "paladin_dlul",
+      "paladin_brave",
+      "paladin_slanoush",
+      "paladin_khornettoh",
+      "sorcier",
+      "mage",
+      "dompteur",
+      "officier",
+      "eclaireur",
+      "soldat_lourd",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Aussi appelé Liche mineure. Gagne 1 SOT par niveau et 1 MOT par niveau pair. Peut choisir des compétences selon ses MOT et des bonus selon ses SOT."
+  },
+  {
+    "ID": 30,
+    "Name_M": "Homme-Légume",
+    "Name_F": "Femme-Légume",
+    "Tags": [
+      "civilisé"
+    ],
+    "Race_tags": [
+      "Créature magique"
+    ],
+    "Min": {
+      "COU": 9
+    },
+    "Max": {
+      "CHA": 10,
+      "FO": 10
+    },
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 22,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 3,
+    "Transport_max": 15,
+    "Vitesse": 100,
+    "Taille": "Humaine",
+    "Langues": [
+      "Commune"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "normal",
+      "Vue": "normale",
+      "Nyctalopie": null
+    },
+    "Bonus_origine": {},
+    "Bonus_origine_conditionnel": [
+      {
+        "bonus": "PR nat.+2",
+        "condition": "naturel"
+      },
+      {
+        "bonus": "RM+3",
+        "condition": "naturel"
+      }
+    ],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      134,
+      21,
+      22,
+      32,
+      145,
+      40,
+      185,
+      706,
+      590,
+      647,
+      580
+    ],
+    "Competences_choix_creation": [
+      [
+        610,
+        623,
+        624
+      ],
+      [
+        "Homme-Carotte",
+        "Homme-Navet",
+        "Homme-Oignon",
+        "Homme-Patate",
+        "Homme-Poireau"
+      ]
+    ],
+    "Competences_choix_creation_nb": 2,
+    "Competences_choix_creation_note": "1 expertise parmi 3 ET 1 archétype parmi 5",
+    "Competences_developpables": [
+      27,
+      19,
+      25,
+      47
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas d'équipement ou d'armement béni"
+    ],
+    "Metiers_impossibles": [
+      "pretre_slanoush",
+      "pretre_dlul",
+      "pretre_youclidh",
+      "pretre_adathie",
+      "paladin_dlul",
+      "paladin_brave",
+      "paladin_slanoush",
+      "paladin_khornettoh",
+      "sorcier",
+      "mage",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": null
+  },
+  {
+    "ID": 31,
+    "Name_M": "Fée",
+    "Name_F": "Fée",
+    "Tags": [
+      "neutre"
+    ],
+    "Race_tags": [
+      "Créature magique"
+    ],
+    "Min": {
+      "INT": 11,
+      "CHA": 12,
+      "AD": 11
+    },
+    "Max": {
+      "FO": 8
+    },
+    "AT": 11,
+    "PRD": 6,
+    "EV_initiale": 8,
+    "EV_par_niveau": "1D4",
+    "EA_initiale": 25,
+    "EA_par_niveau": null,
+    "PR_sol_max": 1,
+    "Transport_max": 1,
+    "Vitesse": 200,
+    "Taille": "20-40cm",
+    "Langues": [
+      "Féérique",
+      "Commune",
+      "Elfique",
+      "Entique"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "développé",
+      "Vue": "normale",
+      "Nyctalopie": "moyenne"
+    },
+    "Bonus_origine": {
+      "FO": -3,
+      "ES": 3,
+      "PER": 1
+    },
+    "Bonus_origine_conditionnel": [
+      {
+        "bonus": "Accès à la magie généraliste",
+        "condition": "toujours"
+      }
+    ],
+    "Materiel": [
+      "Minuscule",
+      "Très Petit"
+    ],
+    "Competences_innees": [
+      2,
+      3,
+      21,
+      23,
+      41,
+      152,
+      153,
+      597,
+      "Critique 1",
+      757
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      27,
+      19,
+      22,
+      43,
+      47,
+      61,
+      16
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas d'armes ou d'équipement maudit"
+    ],
+    "Metiers_impossibles": [
+      "chamane",
+      "bourreau",
+      "pretre_slanoush",
+      "pretre_dlul",
+      "pretre_youclidh",
+      "pretre_adathie",
+      "paladin_dlul",
+      "paladin_brave",
+      "paladin_slanoush",
+      "paladin_khornettoh",
+      "sorcier",
+      "mage",
+      "soldat",
+      "officier",
+      "eclaireur",
+      "soldat_lourd",
+      "medecin",
+      "armurier_artificier",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Ne gagne pas de PA en montant de niveau. Peut flairer le danger à 25m. Peut voler constamment."
+  },
+  {
+    "ID": 32,
+    "Name_M": "Demi-Démon",
+    "Name_F": "Demie-Démone",
+    "Tags": [
+      "neutre"
+    ],
+    "Race_tags": [
+      "Démon"
+    ],
+    "Min": {
+      "COU": 11,
+      "INT": 13,
+      "CHA": 13,
+      "AD": 12
+    },
+    "Max": {},
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 30,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": "illimité",
+    "Vitesse": 100,
+    "Taille": "Humaine",
+    "Langues": [
+      "Commune",
+      "Démonique"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "normal",
+      "Vue": "normale",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "CHA": 1,
+      "PER": 1,
+      "RM": 2
+    },
+    "Bonus_origine_conditionnel": [
+      {
+        "bonus": "PR mag.+3 contre la magie",
+        "condition": "naturel"
+      }
+    ],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      25,
+      27,
+      31,
+      40,
+      113,
+      145,
+      597,
+      598,
+      645,
+      590,
+      641,
+      313,
+      646
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      1,
+      20,
+      22,
+      23,
+      37,
+      43,
+      154
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas d'armes ou d'équipement maudit"
+    ],
+    "Metiers_impossibles": [
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Possède de petites cornes et une fine queue dissimulables."
+  },
+  {
+    "ID": 33,
+    "Name_M": "Drac",
+    "Name_F": "Draque",
+    "Tags": [
+      "civilisé"
+    ],
+    "Race_tags": [
+      "Draconidé"
+    ],
+    "Min": {
+      "COU": 11,
+      "INT": 11,
+      "CHA": 11,
+      "AD": 11,
+      "FO": 11
+    },
+    "Max": {},
+    "AT": 8,
+    "PRD": 11,
+    "EV_initiale": 40,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": "illimité",
+    "Vitesse": 100,
+    "Taille": "2m-2m40",
+    "Langues": [
+      "Draconique",
+      "Vontorzien"
+    ],
+    "Sens": {
+      "Ouie": "faible",
+      "Odorat": "très développé",
+      "Vue": "normale",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "PER": 2
+    },
+    "Bonus_origine_conditionnel": [
+      {
+        "bonus": "PR nat+3",
+        "condition": "naturel"
+      }
+    ],
+    "Materiel": [
+      "Standard",
+      "Grand"
+    ],
+    "Competences_innees": [
+      14,
+      125,
+      21,
+      155,
+      25,
+      27,
+      36,
+      37,
+      39,
+      51,
+      55,
+      647,
+      650,
+      712
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      156,
+      19,
+      29,
+      64
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas de chaussures sauf spéciales"
+    ],
+    "Metiers_impossibles": [
+      "chamane",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Possède une large queue non dissimulable. Peut flairer le danger à 100m."
+  },
+  {
+    "ID": 34,
+    "Name_M": "Homme-bête (Caprin)",
+    "Name_F": "Femme-bête (Caprin)",
+    "Tags": [
+      "sauvage"
+    ],
+    "Race_tags": [
+      "Animaux"
+    ],
+    "Min": {
+      "COU": 10,
+      "AD": 11,
+      "FO": 11
+    },
+    "Max": {
+      "CHA": 10
+    },
+    "AT": 9,
+    "PRD": 9,
+    "EV_initiale": 28,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": 20,
+    "Vitesse": 150,
+    "Taille": "Humaine",
+    "Langues": [
+      "Animalique"
+    ],
+    "Sens": {
+      "Ouie": "développée",
+      "Odorat": "développé",
+      "Vue": "normale",
+      "Nyctalopie": "moyenne"
+    },
+    "Bonus_origine": {
+      "PER": 1
+    },
+    "Bonus_origine_conditionnel": [
+      {
+        "bonus": "PR nat+1",
+        "condition": "naturel"
+      }
+    ],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      3,
+      5,
+      7,
+      9,
+      15,
+      21,
+      28,
+      157,
+      34,
+      145,
+      37,
+      586,
+      580,
+      648
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      17,
+      25,
+      27,
+      61,
+      655,
+      657
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas de chaussures",
+      "Pas d'équipement ou d'armement béni",
+      "Pas de casque sauf spécial ou sur-mesure",
+      "Pas d'arme à poudre"
+    ],
+    "Metiers_impossibles": [
+      "bourgeois",
+      "noble",
+      "cavalier",
+      "chevalier",
+      "dompteur",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Possède des cornes impossibles à dissimuler. Peut flairer le danger à 25m."
+  },
+  {
+    "ID": 35,
+    "Name_M": "Homme-bête (Bovin/Porcin)",
+    "Name_F": "Femme-bête (Bovin/Porcin)",
+    "Tags": [
+      "sauvage"
+    ],
+    "Race_tags": [
+      "Animaux"
+    ],
+    "Min": {
+      "COU": 10,
+      "FO": 13
+    },
+    "Max": {
+      "INT": 11,
+      "CHA": 10,
+      "AD": 12
+    },
+    "AT": 11,
+    "PRD": 7,
+    "EV_initiale": 40,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": "illimité",
+    "Vitesse": 150,
+    "Taille": "1m90-2m30",
+    "Langues": [
+      "Animalique"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "développé",
+      "Vue": "normale",
+      "Nyctalopie": "moyenne"
+    },
+    "Bonus_origine": {
+      "PER": 1
+    },
+    "Bonus_origine_conditionnel": [
+      {
+        "bonus": "PR nat+1",
+        "condition": "naturel"
+      }
+    ],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      154,
+      108,
+      5,
+      7,
+      8,
+      103,
+      34,
+      37,
+      105,
+      145,
+      586,
+      579,
+      648
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      64,
+      111,
+      32,
+      610
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas de chaussures",
+      "Pas d'équipement ou d'armement béni",
+      "Pas de casque sauf spécial ou sur-mesure",
+      "Pas d'arme à poudre"
+    ],
+    "Metiers_impossibles": [
+      "bourgeois",
+      "noble",
+      "cavalier",
+      "chevalier",
+      "mage",
+      "sorcier",
+      "dompteur",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Possède des cornes impossibles à dissimuler. Peut flairer le danger à 25m."
+  },
+  {
+    "ID": 36,
+    "Name_M": "Homme-bête (Canin)",
+    "Name_F": "Femme-bête (Canin)",
+    "Tags": [
+      "neutre"
+    ],
+    "Race_tags": [
+      "Animaux"
+    ],
+    "Min": {
+      "COU": 10,
+      "INT": 13,
+      "AD": 10,
+      "FO": 10
+    },
+    "Max": {
+      "CHA": 10
+    },
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 30,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": 20,
+    "Vitesse": 150,
+    "Taille": "Humaine",
+    "Langues": [
+      "Animalique",
+      "Féérique",
+      "Orc"
+    ],
+    "Sens": {
+      "Ouie": "très développée",
+      "Odorat": "très développé",
+      "Vue": "normale",
+      "Nyctalopie": "moyenne"
+    },
+    "Bonus_origine": {
+      "PER": 2,
+      "RM": 2
+    },
+    "Bonus_origine_conditionnel": [
+      {
+        "bonus": "PR nat+1",
+        "condition": "naturel"
+      }
+    ],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      649,
+      3,
+      5,
+      13,
+      17,
+      21,
+      25,
+      27,
+      34,
+      37,
+      47,
+      159,
+      145,
+      586,
+      198
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      68,
+      119,
+      32,
+      160,
+      634,
+      98
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas d'équipement ou d'armement béni"
+    ],
+    "Metiers_impossibles": [
+      "bourgeois",
+      "noble",
+      "cavalier",
+      "chevalier",
+      "dompteur",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Possède des Crocs (Pi : 1D+3) et le Trait Mâchoire II. Peut flairer le danger à 150m."
+  },
+  {
+    "ID": 37,
+    "Name_M": "Kitsune",
+    "Name_F": "Kitsune",
+    "Tags": [
+      "civilisé"
+    ],
+    "Race_tags": [
+      "Démon",
+      "Animaux"
+    ],
+    "Min": {
+      "COU": 10,
+      "INT": 13,
+      "CHA": 9,
+      "AD": 11
+    },
+    "Max": {
+      "FO": 10
+    },
+    "AT": 10,
+    "PRD": 8,
+    "EV_initiale": 25,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 2,
+    "Transport_max": 10,
+    "Vitesse": 200,
+    "Taille": "Humaine",
+    "Langues": [
+      "Animalique",
+      "Commune",
+      "Corvine",
+      "Démonique"
+    ],
+    "Sens": {
+      "Ouie": "très développée",
+      "Odorat": "très développé",
+      "Vue": "normale",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "PER": 2,
+      "INT": 2,
+      "ES": 1
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      649,
+      3,
+      2,
+      13,
+      45,
+      27,
+      30,
+      145,
+      586,
+      114,
+      58,
+      32,
+      685
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      161,
+      162,
+      31,
+      39,
+      35
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [],
+    "Metiers_impossibles": [
+      "bourgeois",
+      "noble",
+      "cavalier",
+      "chevalier",
+      "paladin_dlul",
+      "paladin_brave",
+      "paladin_slanoush",
+      "paladin_khornettoh",
+      "dompteur",
+      "soldat_lourd",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Possède une queue dissimulable. Peut flairer le danger à 100m."
+  },
+  {
+    "ID": 38,
+    "Name_M": "Harpie",
+    "Name_F": "Harpie",
+    "Tags": [
+      "neutre"
+    ],
+    "Race_tags": [
+      "Animaux"
+    ],
+    "Min": {
+      "INT": 10,
+      "AD": 11
+    },
+    "Max": {
+      "COU": 10,
+      "FO": 12
+    },
+    "AT": 12,
+    "PRD": 6,
+    "EV_initiale": 25,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 3,
+    "Transport_max": 10,
+    "Vitesse": 120,
+    "Taille": "1m80-2m10",
+    "Langues": [
+      "Animalique"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "normal",
+      "Vue": "très développée",
+      "Nyctalopie": "moyenne"
+    },
+    "Bonus_origine": {
+      "PER": 2
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      3,
+      11,
+      163,
+      25,
+      36,
+      49
+    ],
+    "Competences_choix_creation": [
+      [
+        "Physique de rapace",
+        "Physique de Strigidé",
+        "Physique de Phasianidé",
+        "Physique d'Anatidé",
+        "Physique de Passéridé"
+      ]
+    ],
+    "Competences_choix_creation_nb": 1,
+    "Competences_choix_creation_note": "1 physique parmi 5 au choix (chaque physique donne 2 compétences)",
+    "Competences_developpables": [
+      111,
+      35,
+      242
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas de brassard ou d'armure couvrant les bras",
+      "Pas de chaussures"
+    ],
+    "Metiers_impossibles": [
+      "dompteur",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Peut voler (MvT x2). Vue très développée."
+  },
+  {
+    "ID": 39,
+    "Name_M": "Profond",
+    "Name_F": "Profonde",
+    "Tags": [
+      "sauvage"
+    ],
+    "Race_tags": [
+      "Monstre"
+    ],
+    "Min": {
+      "COU": 8,
+      "FO": 12
+    },
+    "Max": {
+      "INT": 10,
+      "CHA": 8,
+      "AD": 9
+    },
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 40,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 4,
+    "Transport_max": "illimité",
+    "Vitesse": 80,
+    "Taille": "2m-2m20",
+    "Langues": [
+      "R'lyehian",
+      "Animalique"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "faible",
+      "Vue": "mauvaise",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "FO": 1,
+      "PER": -4
+    },
+    "Bonus_origine_conditionnel": [
+      {
+        "bonus": "PR nat+1",
+        "condition": "naturel"
+      },
+      {
+        "bonus": "Vitesse en nageant x3",
+        "condition": "en nageant"
+      }
+    ],
+    "Materiel": [
+      "Standard",
+      "Grand"
+    ],
+    "Competences_innees": [
+      8,
+      7,
+      122,
+      650,
+      34,
+      37,
+      43,
+      75,
+      165,
+      208,
+      145,
+      586,
+      575
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      166,
+      108,
+      109,
+      64,
+      167,
+      168,
+      169
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas de collier ni d'équipement autour du cou"
+    ],
+    "Metiers_impossibles": [
+      "bourgeois",
+      "noble",
+      "cavalier",
+      "chevalier",
+      "bourreau",
+      "pretre_slanoush",
+      "pretre_dlul",
+      "pretre_youclidh",
+      "pretre_adathie",
+      "paladin_dlul",
+      "paladin_brave",
+      "paladin_slanoush",
+      "paladin_khornettoh",
+      "sorcier",
+      "mage",
+      "dompteur",
+      "officier",
+      "eclaireur",
+      "medecin",
+      "armurier_artificier",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Aussi appelé Homme-poisson"
+  },
+  {
+    "ID": 40,
+    "Name_M": "Tengu",
+    "Name_F": "Tengu",
+    "Tags": [
+      "civilisé"
+    ],
+    "Race_tags": [
+      "Démon",
+      "Animaux"
+    ],
+    "Min": {
+      "INT": 13,
+      "CHA": 10,
+      "AD": 12
+    },
+    "Max": {
+      "COU": 12,
+      "FO": 12
+    },
+    "AT": 10,
+    "PRD": 10,
+    "EV_initiale": 20,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 3,
+    "Transport_max": 10,
+    "Vitesse": 100,
+    "Taille": "2m-2m20",
+    "Langues": [
+      "Corvine",
+      "Commune",
+      "Animalique",
+      "Vontorzien"
+    ],
+    "Sens": {
+      "Ouie": "développée",
+      "Odorat": "normal",
+      "Vue": "très développée",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "PER": 3,
+      "INT": 1
+    },
+    "Bonus_origine_conditionnel": [
+      {
+        "bonus": "EA initiale+15",
+        "condition": "si druide, prêtre, paladin, mage, mage sauvage, mage pirate, trappeur arcanique ou sorcier"
+      }
+    ],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      3,
+      170,
+      163,
+      25,
+      23,
+      171,
+      27,
+      587,
+      596,
+      647,
+      651,
+      634,
+      80
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      172,
+      102,
+      610,
+      50,
+      58,
+      61
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas de brassard ou armure couvrant les bras sauf spécial",
+      "Pas de chaussures sauf spéciales",
+      "Pas de masque ou d'équipement masquant la bouche sauf spécial"
+    ],
+    "Metiers_impossibles": [
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Aussi appelé Homme-corbeau. Peut flairer le danger à 20m. Peut voler."
+  },
+  {
+    "ID": 41,
+    "Name_M": "Galéanthrope",
+    "Name_F": "Galéanthrope",
+    "Tags": [
+      "civilisé"
+    ],
+    "Race_tags": [
+      "Animaux"
+    ],
+    "Min": {
+      "COU": 13,
+      "INT": 11,
+      "CHA": 11,
+      "AD": 13,
+      "FO": 10
+    },
+    "Max": {},
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 35,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": "illimité",
+    "Vitesse": 200,
+    "Taille": "Humaine",
+    "Langues": [
+      "Animalique",
+      "Commune",
+      "Vontorzien"
+    ],
+    "Sens": {
+      "Ouie": "développée",
+      "Odorat": "très développé",
+      "Vue": "normale",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "PER": 2,
+      "AD": 2
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      2,
+      4,
+      173,
+      13,
+      17,
+      23,
+      28,
+      137,
+      652,
+      587,
+      650,
+      "Connaissance des déserts et savanes"
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      40,
+      111,
+      18,
+      174,
+      37
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas de gants"
+    ],
+    "Metiers_impossibles": [
+      "dompteur",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Aussi appelé Homme-félin. Possède une longue queue fine non dissimulable. Peut flairer le danger à 50m."
+  },
+  {
+    "ID": 42,
+    "Name_M": "Wukong",
+    "Name_F": "Wukong",
+    "Tags": [
+      "civilisé"
+    ],
+    "Race_tags": [
+      "Animaux"
+    ],
+    "Min": {
+      "AD": 11
+    },
+    "Max": {
+      "COU": 12,
+      "INT": 11,
+      "CHA": 11
+    },
+    "AT": 8,
+    "PRD": 10,
+    "EV_initiale": 30,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": "illimité",
+    "Vitesse": 120,
+    "Taille": "Humaine",
+    "Langues": [
+      "Commune",
+      "Corvine",
+      "Animalique"
+    ],
+    "Sens": {
+      "Ouie": "normale",
+      "Odorat": "développé",
+      "Vue": "normale",
+      "Nyctalopie": null
+    },
+    "Bonus_origine": {
+      "PER": 1,
+      "AD": 1
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      1,
+      14,
+      20,
+      174,
+      28,
+      157,
+      38,
+      61,
+      213,
+      658,
+      647,
+      587
+    ],
+    "Competences_choix_creation": [
+      [
+        607,
+        622,
+        625
+      ]
+    ],
+    "Competences_choix_creation_nb": 1,
+    "Competences_choix_creation_note": "1 expertise parmi 3 au choix",
+    "Competences_developpables": [
+      23,
+      47,
+      27,
+      15,
+      40,
+      31
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas de chaussures sauf spéciales"
+    ],
+    "Metiers_impossibles": [
+      "officier",
+      "soldat_lourd",
+      "armurier_artificier",
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Aussi appelé Homme-singe. Possède une longue queue fine non dissimulable. Peut flairer le danger à 25m."
+  },
+  {
+    "ID": 43,
+    "Name_M": "Naga",
+    "Name_F": "Naga",
+    "Tags": [
+      "neutre"
+    ],
+    "Race_tags": [
+      "Démon"
+    ],
+    "Min": {
+      "INT": 10,
+      "AD": 12
+    },
+    "Max": {
+      "COU": 10,
+      "CHA": 12
+    },
+    "AT": 10,
+    "PRD": 9,
+    "EV_initiale": 25,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": 5,
+    "Transport_max": 20,
+    "Vitesse": 100,
+    "Taille": "1m90-2m50",
+    "Langues": [
+      "Animalique",
+      "Commune",
+      "R'lyehian",
+      "Démonique"
+    ],
+    "Sens": {
+      "Ouie": "faible",
+      "Odorat": "très développé",
+      "Vue": "faible",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "PER": -3
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Standard"
+    ],
+    "Competences_innees": [
+      8,
+      13,
+      18,
+      23,
+      34,
+      37,
+      145,
+      49,
+      109,
+      54,
+      67,
+      659,
+      590,
+      "Connaissance des déserts et savanes",
+      660
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      175,
+      176,
+      157,
+      1,
+      47
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [
+      "Pas de pantalon sauf spécial",
+      "Pas de chaussures"
+    ],
+    "Metiers_impossibles": [
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Aussi appelé Homme-serpent. Corps long et fin. Peut flairer le danger à 150m."
+  },
+  {
+    "ID": 44,
+    "Name_M": "Nelfe",
+    "Name_F": "Nelfe",
+    "Tags": [
+      "civilisé"
+    ],
+    "Race_tags": [
+      "Elfe",
+      "Nain"
+    ],
+    "Min": {
+      "COU": 11,
+      "INT": 12,
+      "CHA": 12,
+      "AD": 13,
+      "FO": 13
+    },
+    "Max": {},
+    "AT": 11,
+    "PRD": 10,
+    "EV_initiale": 35,
+    "EV_par_niveau": null,
+    "EA_initiale": null,
+    "EA_par_niveau": null,
+    "PR_sol_max": "illimité",
+    "Transport_max": "illimité",
+    "Vitesse": 120,
+    "Taille": "Humaine",
+    "Langues": [
+      "Commune"
+    ],
+    "Sens": {
+      "Ouie": "développée",
+      "Odorat": "développé",
+      "Vue": "développée",
+      "Nyctalopie": "totale"
+    },
+    "Bonus_origine": {
+      "PER": 3,
+      "RM": 2,
+      "CHA": 1
+    },
+    "Bonus_origine_conditionnel": [],
+    "Materiel": [
+      "Standard",
+      "Petit"
+    ],
+    "Competences_innees": [
+      19,
+      23,
+      25,
+      27,
+      36,
+      44,
+      50,
+      61,
+      55,
+      177,
+      178,
+      588,
+      589,
+      587
+    ],
+    "Competences_choix_creation": [],
+    "Competences_choix_creation_nb": 0,
+    "Competences_choix_creation_note": null,
+    "Competences_developpables": [
+      29,
+      630,
+      "Connaissance des cavernes"
+    ],
+    "Competences_developpables_nb": 2,
+    "Competences_developpables_note": null,
+    "Restrictions_equipement": [],
+    "Metiers_impossibles": [
+      "moine_peste"
+    ],
+    "Metiers_exclusifs": [],
+    "Notes_speciales": "Aussi appelé Nailfe. Nain-Elfe. Petite taille et longs membres. Oreilles pointues et barbe de trois jours perpétuelle. Langue supplémentaire : Elfique ou Nainscrit au choix."
+  }
 ]
