@@ -14,8 +14,14 @@ import { DocumentsPage } from './pages/DocumentsPage';
 
 export function IndexWindow() {
     const [activeSection, setActiveSection] = useState<IndexSection>('origines');
+    const [competenceFilter, setCompetenceFilter] = useState('');
     const [isMaximized, setIsMaximized] = useState(false);
     const { gameRules, loading } = useRefContext();
+
+    const navigateToCompetence = (name: string) => {
+        setCompetenceFilter(name);
+        setActiveSection('competences');
+    };
 
     const appWindow = getCurrentWindow();
 
@@ -45,9 +51,9 @@ export function IndexWindow() {
         }
 
         switch (activeSection) {
-            case 'origines': return <OriginesPage gameRules={gameRules} />;
-            case 'metiers': return <MetiersPage gameRules={gameRules} />;
-            case 'competences': return <CompetencesPage />;
+            case 'origines': return <OriginesPage gameRules={gameRules} onNavigateToCompetence={navigateToCompetence} />;
+            case 'metiers': return <MetiersPage gameRules={gameRules} onNavigateToCompetence={navigateToCompetence} />;
+            case 'competences': return <CompetencesPage initialFilter={competenceFilter} onFilterUsed={() => setCompetenceFilter('')} />;
             case 'formules': return <FormulesPage />;
             case 'corruption': return <CorruptionPage gameRules={gameRules} />;
             case 'alcool-drogues': return <AlcoolDroguesPage />;

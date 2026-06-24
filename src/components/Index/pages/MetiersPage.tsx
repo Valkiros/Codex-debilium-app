@@ -3,6 +3,7 @@ import { GameRules, Metier, Specialisation, SousSpecialisation } from '../../../
 
 interface MetiersPageProps {
     gameRules: GameRules | null;
+    onNavigateToCompetence?: (name: string) => void;
 }
 
 const STAT_LABELS: Record<string, string> = {
@@ -34,13 +35,30 @@ function formatAutoAttributes(attrs: Record<string, number>): string {
 }
 
 function formatSpecAttributes(attrs: Record<string, string>): string {
-    const entries = Object.entries(attrs);
-    if (entries.length === 0) return '-';
-    return entries.map(([key, val]) => `${key}: ${val}`).join(', ');
+    const values = Object.values(attrs);
+    if (values.length === 0) return '-';
+    return values.join(' | ');
+}
+
+function ClickableCompList({ comps, onNavigate }: { comps: string[]; onNavigate?: (name: string) => void }) {
+    return (
+        <span className="inline-flex flex-wrap gap-1">
+            {comps.map((name, i) => (
+                <button
+                    key={`${name}-${i}`}
+                    onClick={() => onNavigate?.(name)}
+                    className="bg-leather/10 hover:bg-leather/20 text-ink px-1.5 py-0.5 rounded transition-colors cursor-pointer"
+                    title={`Voir : ${name}`}
+                >
+                    {name}
+                </button>
+            ))}
+        </span>
+    );
 }
 
 /* ---- Sous-Specialisation Card ---- */
-function SousSpecCard({ sousSpe }: { sousSpe: SousSpecialisation }) {
+function SousSpecCard({ sousSpe, onNavigate }: { sousSpe: SousSpecialisation; onNavigate?: (name: string) => void }) {
     return (
         <div className="ml-8 mt-2 bg-parchment/60 border border-leather/20 rounded px-4 py-3">
             <div className="flex items-baseline gap-2">
@@ -56,7 +74,7 @@ function SousSpecCard({ sousSpe }: { sousSpe: SousSpecialisation }) {
                 {sousSpe.necessite_competence.length > 0 && (
                     <div>
                         <span className="text-leather font-medium">Compétences requises : </span>
-                        {sousSpe.necessite_competence.join(', ')}
+                        <ClickableCompList comps={sousSpe.necessite_competence} onNavigate={onNavigate} />
                     </div>
                 )}
                 {Object.keys(sousSpe.attributs_automatisables).length > 0 && (
@@ -74,7 +92,7 @@ function SousSpecCard({ sousSpe }: { sousSpe: SousSpecialisation }) {
                 {sousSpe.competences_obligatoires && sousSpe.competences_obligatoires.length > 0 && (
                     <div>
                         <span className="text-leather font-medium">Compétences obligatoires : </span>
-                        {sousSpe.competences_obligatoires.join(', ')}
+                        <ClickableCompList comps={sousSpe.competences_obligatoires} onNavigate={onNavigate} />
                     </div>
                 )}
                 {sousSpe.competences_choix && sousSpe.competences_choix.length > 0 && (
@@ -82,7 +100,7 @@ function SousSpecCard({ sousSpe }: { sousSpe: SousSpecialisation }) {
                         <span className="text-leather font-medium">
                             Compétences au choix ({sousSpe.nombre_competences_choix ?? '?'}) :
                         </span>{' '}
-                        {sousSpe.competences_choix.join(', ')}
+                        <ClickableCompList comps={sousSpe.competences_choix} onNavigate={onNavigate} />
                     </div>
                 )}
             </div>
@@ -91,7 +109,7 @@ function SousSpecCard({ sousSpe }: { sousSpe: SousSpecialisation }) {
 }
 
 /* ---- Specialisation Card ---- */
-function SpecCard({ spe, isExpanded, onToggle }: { spe: Specialisation; isExpanded: boolean; onToggle: () => void }) {
+function SpecCard({ spe, isExpanded, onToggle, onNavigate }: { spe: Specialisation; isExpanded: boolean; onToggle: () => void; onNavigate?: (name: string) => void }) {
     return (
         <div className="ml-4 mt-2">
             <button
@@ -114,7 +132,7 @@ function SpecCard({ spe, isExpanded, onToggle }: { spe: Specialisation; isExpand
                     {spe.necessite_competence.length > 0 && (
                         <div>
                             <span className="text-leather font-medium">Compétences requises : </span>
-                            {spe.necessite_competence.join(', ')}
+                            <ClickableCompList comps={spe.necessite_competence} onNavigate={onNavigate} />
                         </div>
                     )}
                     {Object.keys(spe.attributs_automatisables).length > 0 && (
@@ -132,16 +150,15 @@ function SpecCard({ spe, isExpanded, onToggle }: { spe: Specialisation; isExpand
                     {spe.competences && spe.competences.length > 0 && (
                         <div>
                             <span className="text-leather font-medium">Compétences : </span>
-                            {spe.competences.join(', ')}
+                            <ClickableCompList comps={spe.competences} onNavigate={onNavigate} />
                         </div>
                     )}
 
-                    {/* Sous-spécialisations */}
                     {spe.sous_specialisations && spe.sous_specialisations.length > 0 && (
                         <div className="mt-2">
                             <span className="text-leather font-medium text-xs">Sous-spécialisations :</span>
                             {spe.sous_specialisations.map((ss) => (
-                                <SousSpecCard key={ss.id} sousSpe={ss} />
+                                <SousSpecCard key={ss.id} sousSpe={ss} onNavigate={onNavigate} />
                             ))}
                         </div>
                     )}
@@ -152,7 +169,7 @@ function SpecCard({ spe, isExpanded, onToggle }: { spe: Specialisation; isExpand
 }
 
 /* ---- Métier Card ---- */
-function MetierCard({ metier }: { metier: Metier }) {
+function MetierCard({ metier, onNavigate }: { metier: Metier; onNavigate?: (name: string) => void }) {
     const [isExpanded, setIsExpanded] = useState(false);
     const [expandedSpecs, setExpandedSpecs] = useState<Set<string>>(new Set());
 
@@ -190,7 +207,6 @@ function MetierCard({ metier }: { metier: Metier }) {
 
             {isExpanded && (
                 <div className="px-5 py-3 space-y-2 text-sm font-serif text-ink">
-                    {/* Min/Max détails */}
                     <div className="text-xs">
                         <span className="text-leather font-medium">Min/Max : </span>
                         {formatMinMax(
@@ -199,25 +215,22 @@ function MetierCard({ metier }: { metier: Metier }) {
                         )}
                     </div>
 
-                    {/* Compétences obligatoires */}
                     {metier.competences_obligatoires && metier.competences_obligatoires.length > 0 && (
                         <div className="text-xs">
                             <span className="text-leather font-medium">Compétences obligatoires : </span>
-                            {metier.competences_obligatoires.join(', ')}
+                            <ClickableCompList comps={metier.competences_obligatoires} onNavigate={onNavigate} />
                         </div>
                     )}
 
-                    {/* Compétences au choix */}
                     {metier.competences_choix && metier.competences_choix.length > 0 && (
                         <div className="text-xs">
                             <span className="text-leather font-medium">
                                 Compétences au choix ({metier.nombre_competences_choix ?? '?'}) :
                             </span>{' '}
-                            {metier.competences_choix.join(', ')}
+                            <ClickableCompList comps={metier.competences_choix} onNavigate={onNavigate} />
                         </div>
                     )}
 
-                    {/* Spécialisations */}
                     {metier.specialisations && metier.specialisations.length > 0 && (
                         <div className="mt-2">
                             <span className="text-leather font-medium text-sm">Spécialisations :</span>
@@ -227,6 +240,7 @@ function MetierCard({ metier }: { metier: Metier }) {
                                     spe={spe}
                                     isExpanded={expandedSpecs.has(spe.id)}
                                     onToggle={() => toggleSpec(spe.id)}
+                                    onNavigate={onNavigate}
                                 />
                             ))}
                         </div>
@@ -238,7 +252,7 @@ function MetierCard({ metier }: { metier: Metier }) {
 }
 
 /* ---- Main Page ---- */
-export function MetiersPage({ gameRules }: MetiersPageProps) {
+export function MetiersPage({ gameRules, onNavigateToCompetence }: MetiersPageProps) {
     if (!gameRules) {
         return <div className="text-leather font-serif italic">Chargement des métiers...</div>;
     }
@@ -252,7 +266,7 @@ export function MetiersPage({ gameRules }: MetiersPageProps) {
 
             <div className="space-y-3">
                 {gameRules.metiers.map((metier) => (
-                    <MetierCard key={metier.id} metier={metier} />
+                    <MetierCard key={metier.id} metier={metier} onNavigate={onNavigateToCompetence} />
                 ))}
             </div>
         </div>

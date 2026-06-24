@@ -1,79 +1,77 @@
-import { useState } from 'react';
-import { GameRules, Origine } from '../../../types';
+import { useState, useMemo } from 'react';
+import { GameRules } from '../../../types';
+import competencesData from '../../../../src-tauri/data/config/competences.json';
+
+const listeCompetences = competencesData as Array<Record<string, any>>;
+
+const compMap = new Map<number, string>();
+for (const c of listeCompetences) {
+    if (c.ID != null) compMap.set(Number(c.ID), c.Competence);
+}
 
 interface OriginesPageProps {
     gameRules: GameRules | null;
+    onNavigateToCompetence?: (name: string) => void;
 }
 
-const STAT_LABELS: Record<string, string> = {
-    COU: 'COU', INT: 'INT', CHA: 'CHA', AD: 'AD', FO: 'FO',
-};
+const STAT_KEYS = ['COU', 'INT', 'CHA', 'AD', 'FO'] as const;
 
-function formatMinMax(min: Record<string, number | undefined>, max: Record<string, number | undefined>): string {
-    const parts: string[] = [];
-    for (const [key, label] of Object.entries(STAT_LABELS)) {
-        const minVal = min[key] ?? min[key === 'COU' ? 'COUR' : key];
-        const maxVal = max[key] ?? max[key === 'COU' ? 'COUR' : key];
-        if (minVal != null || maxVal != null) {
-            const minStr = minVal != null ? String(minVal) : '-';
-            const maxStr = maxVal != null ? String(maxVal) : '-';
-            parts.push(`${label} ${minStr}/${maxStr}`);
-        }
-    }
-    return parts.length > 0 ? parts.join(', ') : '-';
-}
-
-function InfoRow({ label, value }: { label: string; value: any }) {
-    if (value == null || value === '' || (Array.isArray(value) && value.length === 0)) return null;
-    const display = Array.isArray(value) ? value.join(', ') : String(value);
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
     return (
-        <div className="text-xs">
-            <span className="text-leather font-medium">{label} : </span>
-            {display}
+        <div className="border-t border-leather/10 pt-3 mt-3 first:border-0 first:pt-0 first:mt-0">
+            <h4 className="text-xs font-bold text-leather uppercase tracking-wider mb-2">{title}</h4>
+            {children}
         </div>
     );
 }
 
-function SensRow({ sens }: { sens: any }) {
-    if (!sens) return null;
-    const parts = Object.entries(sens)
-        .filter(([, v]) => v != null)
-        .map(([k, v]) => `${k}: ${v}`);
-    if (parts.length === 0) return null;
-    return <InfoRow label="Sens" value={parts.join(', ')} />;
+function StatBadge({ label, value }: { label: string; value: any }) {
+    if (value == null) return null;
+    return (
+        <div className="bg-leather/10 rounded px-3 py-1.5 text-center min-w-[70px]">
+            <div className="text-[10px] text-leather/70 uppercase font-bold">{label}</div>
+            <div className="text-sm font-bold text-leather">{value}</div>
+        </div>
+    );
 }
 
-function BonusRow({ label, bonus }: { label: string; bonus: any }) {
-    if (!bonus) return null;
-    if (Array.isArray(bonus)) {
-        if (bonus.length === 0) return null;
-        return (
-            <div className="text-xs">
-                <span className="text-leather font-medium">{label} : </span>
-                <ul className="list-disc list-inside mt-0.5 space-y-0.5 text-ink-light">
-                    {bonus.map((b: any, i: number) => (
-                        <li key={i}>{typeof b === 'string' ? b : JSON.stringify(b)}</li>
+function CompetenceList({ label, ids, note, onNavigate }: { label: string; ids: any; note?: string; onNavigate?: (name: string) => void }) {
+    if ((!ids || (Array.isArray(ids) && ids.length === 0)) && !note) return null;
+
+    const names = Array.isArray(ids) ? ids.map(id => ({ id, name: compMap.get(Number(id)) || `Inconnu (${id})` })) : [];
+
+    return (
+        <div>
+            <div className="text-xs text-leather font-medium mb-1">{label}</div>
+            {names.length > 0 ? (
+                <div className="flex flex-wrap gap-1.5">
+                    {names.map(({ id, name }) => (
+                        <button
+                            key={id}
+                            onClick={() => onNavigate?.(name)}
+                            className="text-xs bg-leather/10 hover:bg-leather/20 text-ink px-2 py-0.5 rounded transition-colors cursor-pointer"
+                            title={`Voir la compétence : ${name}`}
+                        >
+                            {name}
+                        </button>
                     ))}
-                </ul>
-            </div>
-        );
-    }
-    if (typeof bonus === 'object') {
-        const entries = Object.entries(bonus);
-        if (entries.length === 0) return null;
-        return <InfoRow label={label} value={entries.map(([k, v]) => `${k} ${v}`).join(', ')} />;
-    }
-    return <InfoRow label={label} value={bonus} />;
+                </div>
+            ) : note ? (
+                <div className="text-xs text-ink-light italic">{note}</div>
+            ) : null}
+        </div>
+    );
 }
 
-function OrigineCard({ origine, corruptionEffects }: { origine: any; corruptionEffects?: string }) {
+function OrigineCard({ origine, corruptionEffects, onNavigateToCompetence }: { origine: any; corruptionEffects?: string; onNavigateToCompetence?: (name: string) => void }) {
     const [isExpanded, setIsExpanded] = useState(false);
 
-    const min = (origine.Min || origine.min || {}) as Record<string, number | undefined>;
-    const max = (origine.Max || origine.max || {}) as Record<string, number | undefined>;
-    const summary = formatMinMax(min, max);
+    const min = (origine.Min || origine.min || {}) as Record<string, any>;
+    const max = (origine.Max || origine.max || {}) as Record<string, any>;
     const name_m = origine.Name_M || origine.name_m;
     const name_f = origine.Name_F || origine.name_f;
+
+    const sens = origine.Sens;
 
     return (
         <div className="border border-leather/20 rounded-lg overflow-hidden">
@@ -91,65 +89,132 @@ function OrigineCard({ origine, corruptionEffects }: { origine: any; corruptionE
                         <span className="ml-2 text-xs text-ink-light italic">({origine.Tags.join(', ')})</span>
                     )}
                 </div>
-                <span className="text-xs text-ink-light font-serif">{summary}</span>
             </button>
 
             {isExpanded && (
-                <div className="px-5 py-3 space-y-2 text-sm font-serif text-ink">
-                    <InfoRow label="Min/Max" value={summary} />
+                <div className="px-5 py-4 space-y-0 text-sm font-serif text-ink">
 
-                    {/* Combat */}
-                    <div className="text-xs flex gap-4 flex-wrap">
-                        {origine.AT != null && <span><span className="text-leather font-medium">AT :</span> {origine.AT}</span>}
-                        {origine.PRD != null && <span><span className="text-leather font-medium">PRD :</span> {origine.PRD}</span>}
-                        {origine.Vitesse != null && <span><span className="text-leather font-medium">Vitesse :</span> {origine.Vitesse}</span>}
-                        {origine.Taille != null && <span><span className="text-leather font-medium">Taille :</span> {origine.Taille}</span>}
-                    </div>
+                    {/* Caractéristiques & Combat */}
+                    <Section title="Caractéristiques & Combat">
+                        <div className="flex flex-wrap gap-2 mb-3">
+                            {STAT_KEYS.map(key => {
+                                const minV = min[key] ?? min[key === 'COU' ? 'COUR' : key];
+                                const maxV = max[key] ?? max[key === 'COU' ? 'COUR' : key];
+                                if (minV == null && maxV == null) return null;
+                                return <StatBadge key={key} label={key} value={`${minV ?? '-'} / ${maxV ?? '-'}`} />;
+                            })}
+                            <StatBadge label="AT" value={origine.AT} />
+                            <StatBadge label="PRD" value={origine.PRD} />
+                        </div>
+                    </Section>
 
-                    {/* EV / EA */}
-                    <div className="text-xs flex gap-4 flex-wrap">
-                        {origine.EV_initiale != null && <span><span className="text-leather font-medium">EV initiale :</span> {origine.EV_initiale}</span>}
-                        {origine.EV_par_niveau != null && <span><span className="text-leather font-medium">EV/niveau :</span> {origine.EV_par_niveau}</span>}
-                        {origine.EA_initiale != null && <span><span className="text-leather font-medium">EA initiale :</span> {origine.EA_initiale}</span>}
-                        {origine.EA_par_niveau != null && <span><span className="text-leather font-medium">EA/niveau :</span> {origine.EA_par_niveau}</span>}
-                    </div>
+                    {/* Vitalité */}
+                    <Section title="Vitalité & Énergie">
+                        <div className="flex flex-wrap gap-2">
+                            <StatBadge label="EV init." value={origine.EV_initiale} />
+                            <StatBadge label="EV/niv." value={origine.EV_par_niveau} />
+                            <StatBadge label="EA init." value={origine.EA_initiale} />
+                            <StatBadge label="EA/niv." value={origine.EA_par_niveau} />
+                        </div>
+                    </Section>
 
-                    <InfoRow label="PR Sol. max" value={origine.PR_sol_max} />
-                    <InfoRow label="Transport max" value={origine.Transport_max} />
-                    <InfoRow label="Langues" value={origine.Langues} />
-                    <SensRow sens={origine.Sens} />
-                    <InfoRow label="Race" value={origine.Race_tags} />
+                    {/* Physique */}
+                    <Section title="Physique & Déplacement">
+                        <div className="flex flex-wrap gap-2 mb-2">
+                            <StatBadge label="Vitesse" value={origine.Vitesse} />
+                            <StatBadge label="Taille" value={origine.Taille} />
+                            <StatBadge label="PR Sol. max" value={origine.PR_sol_max} />
+                            <StatBadge label="Transport" value={origine.Transport_max} />
+                        </div>
+                        {origine.Langues && origine.Langues.length > 0 && (
+                            <div className="text-xs text-ink-light mt-1">
+                                <span className="text-leather font-medium">Langues : </span>{origine.Langues.join(', ')}
+                            </div>
+                        )}
+                    </Section>
+
+                    {/* Sens */}
+                    {sens && Object.values(sens).some(v => v != null) && (
+                        <Section title="Sens">
+                            <div className="flex flex-wrap gap-2">
+                                {Object.entries(sens).filter(([, v]) => v != null).map(([k, v]) => (
+                                    <StatBadge key={k} label={k} value={v as string} />
+                                ))}
+                            </div>
+                        </Section>
+                    )}
 
                     {/* Bonus */}
-                    <BonusRow label="Bonus d'origine" bonus={origine.Bonus_origine} />
-                    <BonusRow label="Bonus conditionnel" bonus={origine.Bonus_origine_conditionnel} />
+                    {(origine.Bonus_origine && Object.keys(origine.Bonus_origine).length > 0) || (origine.Bonus_origine_conditionnel && origine.Bonus_origine_conditionnel.length > 0) ? (
+                        <Section title="Bonus d'origine">
+                            {origine.Bonus_origine && Object.keys(origine.Bonus_origine).length > 0 && (
+                                <div className="text-xs text-ink mb-1">
+                                    {Object.entries(origine.Bonus_origine).map(([k, v]) => `${k}: ${v}`).join(', ')}
+                                </div>
+                            )}
+                            {origine.Bonus_origine_conditionnel && origine.Bonus_origine_conditionnel.length > 0 && (
+                                <ul className="list-disc list-inside text-xs text-ink-light space-y-0.5">
+                                    {origine.Bonus_origine_conditionnel.map((b: any, i: number) => (
+                                        <li key={i}>{typeof b === 'string' ? b : JSON.stringify(b)}</li>
+                                    ))}
+                                </ul>
+                            )}
+                        </Section>
+                    ) : null}
 
                     {/* Compétences */}
-                    <InfoRow label="Compétences innées" value={origine.Competences_innees} />
-                    {origine.Competences_choix_creation_note && (
-                        <InfoRow label="Compétences au choix (création)" value={origine.Competences_choix_creation_note} />
-                    )}
-                    {origine.Competences_developpables_note && (
-                        <InfoRow label="Compétences développables" value={origine.Competences_developpables_note} />
+                    <Section title="Compétences">
+                        <div className="space-y-3">
+                            <CompetenceList label="Innées" ids={origine.Competences_innees} onNavigate={onNavigateToCompetence} />
+                            <CompetenceList
+                                label={`Au choix à la création (${origine.Competences_choix_creation_nb || 0})`}
+                                ids={origine.Competences_choix_creation}
+                                note={origine.Competences_choix_creation_note}
+                                onNavigate={onNavigateToCompetence}
+                            />
+                            <CompetenceList
+                                label={`Développables (${origine.Competences_developpables_nb || 0} au choix)`}
+                                ids={origine.Competences_developpables}
+                                note={origine.Competences_developpables_note}
+                                onNavigate={onNavigateToCompetence}
+                            />
+                        </div>
+                    </Section>
+
+                    {/* Équipement & Restrictions */}
+                    {((origine.Materiel && origine.Materiel.length > 0) || (origine.Restrictions_equipement && origine.Restrictions_equipement.length > 0) || (origine.Metiers_impossibles && origine.Metiers_impossibles.length > 0) || (origine.metiers_impossibles && origine.metiers_impossibles.length > 0) || (origine.Metiers_exclusifs && origine.Metiers_exclusifs.length > 0)) && (
+                        <Section title="Équipement & Restrictions">
+                            {origine.Materiel && origine.Materiel.length > 0 && (
+                                <div className="text-xs mb-1"><span className="text-leather font-medium">Matériel : </span>{origine.Materiel.join(', ')}</div>
+                            )}
+                            {origine.Restrictions_equipement && origine.Restrictions_equipement.length > 0 && (
+                                <div className="text-xs mb-1"><span className="text-leather font-medium">Restrictions : </span>{origine.Restrictions_equipement.join(', ')}</div>
+                            )}
+                            {(origine.Metiers_impossibles || origine.metiers_impossibles) && (origine.Metiers_impossibles || origine.metiers_impossibles).length > 0 && (
+                                <div className="text-xs mb-1"><span className="text-leather font-medium">Métiers interdits : </span>{(origine.Metiers_impossibles || origine.metiers_impossibles).join(', ')}</div>
+                            )}
+                            {origine.Metiers_exclusifs && origine.Metiers_exclusifs.length > 0 && (
+                                <div className="text-xs mb-1"><span className="text-leather font-medium">Métiers exclusifs : </span>{origine.Metiers_exclusifs.join(', ')}</div>
+                            )}
+                        </Section>
                     )}
 
-                    {/* Matériel & Restrictions */}
-                    <InfoRow label="Matériel" value={origine.Materiel} />
-                    <InfoRow label="Restrictions équipement" value={origine.Restrictions_equipement} />
-                    <InfoRow label="Métiers interdits" value={origine.Metiers_impossibles || origine.metiers_impossibles} />
-                    <InfoRow label="Métiers exclusifs" value={origine.Metiers_exclusifs} />
-                    <InfoRow label="Notes spéciales" value={origine.Notes_speciales} />
+                    {/* Notes */}
+                    {origine.Notes_speciales && (
+                        <Section title="Notes spéciales">
+                            <div className="text-xs text-ink italic">{origine.Notes_speciales}</div>
+                        </Section>
+                    )}
 
                     {/* Corruption */}
                     {corruptionEffects && corruptionEffects !== 'Aucun effet' && corruptionEffects !== 'Pas d\'effet' && (
-                        <div className="text-xs mt-1 border-t border-leather/10 pt-2">
-                            <span className="text-leather font-medium">Corruption : </span>
-                            <ul className="list-disc list-inside mt-1 space-y-0.5 text-ink-light">
+                        <Section title="Corruption">
+                            <ul className="list-disc list-inside text-xs text-ink-light space-y-0.5">
                                 {corruptionEffects.split('|').map((effect, i) => (
                                     <li key={i}>{effect.trim()}</li>
                                 ))}
                             </ul>
-                        </div>
+                        </Section>
                     )}
                 </div>
             )}
@@ -157,18 +222,21 @@ function OrigineCard({ origine, corruptionEffects }: { origine: any; corruptionE
     );
 }
 
-export function OriginesPage({ gameRules }: OriginesPageProps) {
+export function OriginesPage({ gameRules, onNavigateToCompetence }: OriginesPageProps) {
     if (!gameRules) {
         return <div className="text-leather font-serif italic">Chargement des origines...</div>;
     }
 
-    const corruptionByName = new Map<string, string>();
-    if (gameRules.corruption_origine) {
-        for (const entry of gameRules.corruption_origine as any[]) {
-            corruptionByName.set(entry.Masculin, entry.Effets);
-            if (entry.Féminin) corruptionByName.set(entry.Féminin, entry.Effets);
+    const corruptionByName = useMemo(() => {
+        const map = new Map<string, string>();
+        if (gameRules.corruption_origine) {
+            for (const entry of gameRules.corruption_origine as any[]) {
+                map.set(entry.Masculin, entry.Effets);
+                if (entry.Féminin) map.set(entry.Féminin, entry.Effets);
+            }
         }
-    }
+        return map;
+    }, [gameRules.corruption_origine]);
 
     return (
         <div className="space-y-4">
@@ -183,6 +251,7 @@ export function OriginesPage({ gameRules }: OriginesPageProps) {
                         key={origine.ID || origine.id}
                         origine={origine}
                         corruptionEffects={corruptionByName.get(origine.Name_M || origine.name_m) || corruptionByName.get(origine.Name_F || origine.name_f)}
+                        onNavigateToCompetence={onNavigateToCompetence}
                     />
                 ))}
             </div>

@@ -567,6 +567,8 @@ pub fn save_personnage_local(
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Competence {
+    #[serde(alias = "ID")]
+    pub id: Option<i32>,
     #[serde(alias = "Competence")]
     pub nom: String,
     #[serde(alias = "Description")]
