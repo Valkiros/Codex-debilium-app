@@ -45,6 +45,10 @@ src-tauri/*.txt
 .claude/plans/
 .claude/settings.local.json
 
+# Excel/Office files
+*.xlsm
+*.xlsx
+
 # Old project artifacts
 .antigravity/
 src-tauri/data/items/Old/
